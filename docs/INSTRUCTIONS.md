@@ -8,6 +8,10 @@ Deze leertaak hoort bij sprint 11 "Connecting People". Dit is een leertaak die j
 
 In het college S11W1-01-Sprintplanning-Connecting-People en de workshop S11W1-02-My-first-chatroom wordt de opdracht en de werkwijze uitgelegd.
 
+Bij deze leertaak hoort de deeltaak:
+- [UI Stack](https://github.com/fdnd-task/connecting-people-ui-stack)
+
+
 ## Doel van deze opdracht
 
 Je maakt in deze leertaak een real-time applicatie waarmee mensen direct met elkaar in verbinding staan om te chatten, berichten te sturen, vragen te stellen, een chatbot te gebruiken, of iets anders.
