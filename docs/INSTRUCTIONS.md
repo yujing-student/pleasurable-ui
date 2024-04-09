@@ -1,6 +1,6 @@
-# Connecting People - Realtime Web App
+# Pleasurable Interface
 
-Om de klantrelatie te bestendigen ontwikkel je bij wijze van relatiegeschenk een realtime toepassing voor een bestaande opdrachtgever. Je kiest een opdrachtgever waar je het afgelopen jaar met plezier mee hebt samengewerkt. Verbaas ze met jouw eigen initiatief en jouw capaciteiten en versterk daarmee de relatie.
+Ontwerp en maak voor een opdrachtgever een interface waar gebruikers blij van worden
 
 ## Context
 
