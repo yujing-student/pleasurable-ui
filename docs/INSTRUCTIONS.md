@@ -25,42 +25,28 @@ In de analysefase inventariseer je wat er moet gebeuren om een taak uit te voere
 2. Bekijk de verschillende fases van de DLC en wat je per fase gaat doen
 3. Bekijk de [planning van sprint 11](https://programma.fdnd.nl/data-driven-web/pleasurable-ui) en wat je per week gaat doen
 4. Bespreek met het projectteam wat je aan werk verwacht en maak aantekeningen. (wat komt je bekend voor, wat heb je al vaker gedaan of wat lijkt je lastig)
-5. Bekijk het gemaakte werk van de teamleden zodat jullie al een beeld krijgen van wat er is gemaakt
+5. Bekijk het gemaakte werk van de teamleden zodat jullie een beeld krijgen van wat er is gemaakt
 
 ### Samenwerken & planning
 In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat doen en maak je een planning.
 
 1. Een teamlid forkt deze leertaak, de hoofd-repo, en voegt teamleden toe als 'collaborators'
 2. De andere teamleden forken de hoofd-repo, zo kun je makkelijk wijzigingen doorvoeren en ophalen
-3. Koppel het _project board_ aan de nieuwe gezamenlijke _repository_ om bij te kunnen houden wie wat doet.
+3. Maak een _project board_ aan en koppel het aan de gezamenlijke _repository_ om bij te kunnen houden wie wat doet
+4. Plan voor de aankomende weken alle standups en reviews en noteer de planning in jullie _project board_
 
 ### Materiaal voor samenwerken
 
-
-- [How to Collaborate on GitHub](https://code.tutsplus.com/tutorials/how-to-collaborate-on-github--net-34267)
-- [download het Team Canvas](https://github.com/fdnd-task/performance-matters-fast-website/blob/main/docs/Teamcanvas.pdf)
-- [Lees instructies over het gebruik van het Teamcanvas in de deeltaak uit sprint 1](https://github.com/fdnd-task/your-tribe-team-canvas)
-
-
-
-#### Planning
-In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat doen en maak je een planning.
-
-1. Koppel het _project board_ aan de nieuwe gezamenlijke _repository_ om bij te kunnen houden wie wat doet.
-2. Plan voor de aankomende weken alle standups en reviews en noteer de planning in jullie _project board_.
-
-#### Materiaal planning
-
 - [About Githhub Projects, quickstart en best practices](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-- [Wat is een User Story?](https://agilescrumgroup.nl/wat-is-een-user-story/)
-- [What's Microproductivity?](https://blog.trello.com/microproductivity-break-tasks-into-smaller-steps)
-
+- [How to Collaborate on GitHub](https://code.tutsplus.com/tutorials/how-to-collaborate-on-github--net-34267)
+<!-- - [download het Team Canvas](https://github.com/fdnd-task/performance-matters-fast-website/blob/main/docs/Teamcanvas.pdf)-->
+<!-- - [Lees instructies over het gebruik van het Teamcanvas in de deeltaak uit sprint 1](https://github.com/fdnd-task/your-tribe-team-canvas) -->
 
 
 ## Ontwerpen
 In de ontwerpfase neem je ontwerpbeslissingen en zorg je dat je precies weet wat je moet gaan bouwen
 
-In de ontwerpfase bepaal je met je team wat je gaat maken. Bepaal de [sitemap & UML diagram](#sitemap--uml-diagram) van jullie website en per pagina de url/routes, schets daarna een [wireframe & breakdown](#wireframe-wireflow--breakdown) per onderdeel van de website. Maak tot slot code-afspraken. 
+In de ontwerpfase bepaal je met je team wat je gaat maken. Bepaal de [sitemap & UML diagram](#sitemap--uml-diagram) van jullie website en per pagina de url/routes, schets daarna een [wireframe & breakdown](#wireframe-wireflow--breakdown) per onderdeel van de website. Maak tot slot [code-afspraken](#code-afspraken). 
 
 ### Sitemap & UML Diagram
 Bepaal welke pagina's er gaan komen, welke url's daarbij horen en de data die erbij hoort.
@@ -90,16 +76,16 @@ In de bouwfase realiseer je de beslissingen uit de ontwerpfase.
 ### Integreren
 In de integratiefase voer je de aanpassingen door zodat iedereen ze kan zien en er op verder kan bouwen. 
 
-1. Integreer jouw real-time web app in de bestaande website van de opdrachtgever.
-2. Maak een *pull-request* voor de real-time functionaliteit.
-3. Handel het *pull-request* af, zorg voor een helder gedocumenteerd *pull-request* door bij de afhandeling relevante berichten te typen. Neem een screenshot van *pull-requests* op in je wiki!
-4. Publiceer jouw project via bijv. Adaptable of Railway (nb. cyclic ondersteund helaas geen sockets!)
+1. Integreer jouw code naar de gezamenlijke repo
+2. Maak een *pull-request* voor de feature waar je aan hebt gewerkt
+3. Handel het *pull-request* af, zorg voor een helder gedocumenteerd *pull-request* door bij de afhandeling relevante berichten te typen. 
+4. Zorg dat je teamgenoten de nieuwe code integreren
 
 
-#### Materiaal integratiefase
+#### Materiaal
 
 - [Creating a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
-- [GitHub, Aan een project bijdragen](https://git-scm.com/book/nl/v2/GitHub-Aan-een-project-bijdragen) (laat je niet afschrikken door de command line code, jij kunt daar prima GitHub Desktop voor gebruiken!)
+- [Feature Branch: A Quick Walk Through Git Workflow](https://blog.mergify.com/feature-branch-a-quick-walk-through-git-workflow/)
 
 
 ### Testen
