@@ -57,13 +57,13 @@ Bepaal welke pagina's jullie gaan ontwerpen en bouwen, welke url's daarbij horen
 5. Schrijf ook op welke data wordt doorgegeven aan een volgende functie of methode
 
 ### Wireframe, Wireflow & Breakdown
-Schets per pagina en onderdelen gezamenlijk een wireframe en/of wireflow en maak een breakdown van de HTML, CSS en/of Client-side Javascript. Het is belangrijk om dit gezamenlijk te doen, nu maak je met het team afspraken over code, semantiek en naamgeving. 
+Schets per pagina en onderdelen gezamenlijk een wireframe en/of wireflow en maak een breakdown van de HTML, CSS en Client-side JS. Het is belangrijk om dit gezamenlijk te doen, nu maak je met het team afspraken over code, semantiek en naamgeving. 
 
 Maak voor elke pagina, of onderdeel een ontwerp op basis van de huisstijl. (Bijvoorbeeld in Figma) Dit wordt het ontwerp dat jullie gaan realiseren. Het ontwerp zal tijdens de werkzaamheden veranderen. Dat is prima. Soms zal je de veranderingen bijhouden in het Figma file, soms is dat niet nodig. 
 
 ### Code afspraken
-Maak code afspraken met je team over de Node-code, (semantische) HTML, gestructureerde CSS met custom properties en conventies.
-Denk na over de HTML structuur, en het voorkomen van layout shifts, toepassen van perceived performance en loading hints aan de browser en het toepassen van responsive images. maak afspraken over de volgorde van de CSS, van generiek-naar-specifiek. Bedenk een goede volgorde in de Node en de routing. Maak afspraken over het schrijven van comments. Etc ..
+Maak code afspraken met je team over de Node-code, (semantische) HTML, gestructureerde CSS en conventies.
+Denk na over de HTML structuur, en het voorkomen van layout shifts, toepassen van perceived performance en loading hints aan de browser en het toepassen van responsive images. Maak afspraken over de volgorde van de CSS, van generiek-naar-specifiek. Bedenk een goede volgorde in de Node en de routing. Maak afspraken over het schrijven van comments. Etc ..
 
 
 
