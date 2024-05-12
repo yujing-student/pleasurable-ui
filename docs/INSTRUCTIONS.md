@@ -110,6 +110,6 @@ Deze opdracht is done als:
 - [ ]  Je hebt je website samen ontworpen en gemaakt en de website is online gepubliceerd
 - [ ]  Je hebt je proces bijgehouden van het iteratief (samen)werken in de Wiki
 - [ ]  Je toont aan dat je in de integratie- en testfase verschillende methoden en technieken hebt ingezet om samen te werken met code
-- [ ]  Je hebt client-side scripting technieken gebruikt om een prettige UI te ontwerpen en maken
+- [ ]  Je hebt client-side scripting technieken gebruikt om een interface te ontwerpen en maken waar gebruikers blij van worden
 
 
