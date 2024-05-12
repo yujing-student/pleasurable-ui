@@ -70,7 +70,11 @@ Denk na over de HTML structuur, en het voorkomen van layout shifts, toepassen va
 ### Bouwen
 In de bouwfase realiseer je de beslissingen uit de ontwerpfase.
 
+Zorg dat je met je team Mobile First bouwt. Zet eerst de (semantische) HTML van de pagina's en/of onderdelen op. Pas daarna CSS toe om de huisstijl goed toe te passen. Voeg daarna media-queries of andere responsive CSS technieken toe voor M, L en of XL schermen. 
 
+Bouw de website volgens het principe van Progressive Enhancement. Zorg dat eerst de _functional_ en _reliable_ laag het goed doet, daarna de _usable_ laag, voordat je gaat experimenteren met de _pleasurable UI_. 
+
+Pas de code afspraken toe en en doe regelmatig een code-review met je team. 
 
 
 
@@ -101,11 +105,8 @@ In de testfase controleer je of jouw aanpassingen werken zoals bedoeld.
 Deze opdracht is done als:
 
 - [ ]  Je hebt je website samen ontworpen en gemaakt en de website is online gepubliceerd
-- [ ]  Je hebt je proces bijgehouden in de Wiki
-- [ ]  Je toont aan dat je in de analysefase verschillende methoden en technieken hebt ingezet om te inventariseren wat er moet gebeuren
-- [ ]  Je toont aan dat je in de ontwerpfase verschillende methoden en technieken hebt ingezet die ervoor zorgen dat je precies weet wat je moet bouwen
-- [ ]  Je toont aan dat je in de bouwfase verschillende server-side en client-side methoden en technieken hebt ingezet om het ontwerp te realiseren
-- [ ]  Je toont aan dat je in de testfase verschillende methoden en technieken hebt ingezet om te testen of jouw website voldoet aan standaarden en gebruiksvriendelijk is
-- [ ]  Je hebt client-side scripting gebruikt om een prettige UI te maken
+- [ ]  Je hebt je proces bijgehouden van het iteratief (samen)werken in de Wiki
+- [ ]  Je toont aan dat je in de integratie- en testfase verschillende methoden en technieken hebt ingezet om samen te werken met code
+- [ ]  Je hebt client-side scripting technieken gebruikt om een prettige UI te ontwerpen en maken
 
 
