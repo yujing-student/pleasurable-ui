@@ -47,7 +47,7 @@ In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat
 In de ontwerpfase bepaal je met je team wat je gaat maken. Bepaal de [sitemap & UML diagram](#sitemap--uml-diagram) van jullie website en per pagina de url/routes, schets daarna een [wireframe & breakdown](#wireframe-wireflow--breakdown) per onderdeel van de website. Maak tot slot [code-afspraken](#code-afspraken). 
 
 ### Sitemap & UML Diagram
-Bepaal welke pagina's er gaan komen, welke url's daarbij horen en de data die erbij hoort.
+Bepaal welke pagina's jullie gaan ontwerpen en bouwen, welke url's daarbij horen en de data die erbij hoort.
 
 1. Teken een sitemap met alle pagina's voor de opdracht voor de opdrachtgever (overzicht-, detail-, formulierpagina, etc ...)
 2. Schrijf per pagina de url en de parameters die moet worden meegestuurd
