@@ -53,7 +53,7 @@ Bepaal welke pagina's jullie gaan ontwerpen en bouwen, welke url's daarbij horen
 1. Teken een sitemap met alle pagina's voor de opdracht voor de opdrachtgever (overzicht-, detail-, formulierpagina, etc ...)
 2. Schrijf per pagina de url en de parameters die moet worden meegestuurd
 3. Werk alle routes uit: Schets de functies en methodes die worden uitgevoerd en de bijbehorende EJS
-4. Noteer welke data wordt opgehaald en of het een GET of POST is
+4. Noteer welke data wordt opgehaald en gepost met de  Directus-API en of het een GET of POST is
 5. Schrijf ook op welke data wordt doorgegeven aan een volgende functie of methode
 
 ### Wireframe, Wireflow & Breakdown
