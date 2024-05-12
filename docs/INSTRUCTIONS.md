@@ -4,21 +4,18 @@ Ontwerp en maak voor een opdrachtgever een interface waar gebruikers blij van wo
 
 ## Context
 
-Deze leertaak hoort bij sprint 11 "Connecting People". Dit is een leertaak die je in een team uitvoert voor een opdrachtgever.
+Deze leertaak hoort bij sprint 11 "Pleasurable UI". Dit is een leertaak die je in een team uitvoert voor een opdrachtgever.
 
-In het college S11W1-01-Sprintplanning-Connecting-People en de workshop S11W1-02-My-first-chatroom wordt de opdracht en de werkwijze uitgelegd.
-
-Bij deze leertaak hoort de deeltaak:
-- [UI Stack](https://github.com/fdnd-task/connecting-people-ui-stack)
+In het college S11W1-01-Sprintplanning en de workshop S11W1-02-Projectboard wordt de opdracht en de werkwijze uitgelegd.
 
 
 ## Doel van deze opdracht
 
-Je maakt in deze leertaak een real-time applicatie waarmee mensen direct met elkaar in verbinding staan om te chatten, berichten te sturen, vragen te stellen, een chatbot te gebruiken, of iets anders.
+Je leert hoe je met een team een interactieve website kan ontwerpen en maken.
 
 ## Werkwijze
 
-Je werkt in een team van max. 3 frontenders aan een website voor een opdrachtgever. Zorg er voor dat je duidelijk afspraken maakt en elkaar dagelijks op de hoogte houdt van vorderingen. Samen met jouw team ben je verantwoordelijk voor de planning, het samenwerkingsproces én het eindresultaat.
+Je werkt in een team aan de website voor een opdrachtgever. Zorg er voor dat je duidelijk afspraken maakt en elkaar dagelijks op de hoogte houdt van vorderingen. Samen met jouw team ben je verantwoordelijk voor de planning, het samenwerkingsproces én het eindresultaat.
 
 Deze opdracht gaat over alle fases van de DLC [analyseren](#analyseren), [ontwerpen](#ontwerpen), [bouwen](#bouwen), [integreren](#integreren) en [testen](#testen).
 
@@ -40,20 +37,7 @@ In de analysefase herzie je als team afspraken over hoe je gaat samenwerken.
 - [download het Team Canvas](https://github.com/fdnd-task/performance-matters-fast-website/blob/main/docs/Teamcanvas.pdf)
 - [Lees instructies over het gebruik van het Teamcanvas in de deeltaak uit sprint 1](https://github.com/fdnd-task/your-tribe-team-canvas)
 
-#### Brainstorm
 
-In deze sprint maak je als team een real-time toepassing om je opdrachtgever te verassen. We beginnen met een brainstorm om vast te stellen wat je gaat opleveren. Tip: Houd het klein en behapbaar.
-
-1. Houdt een brainstorm over het te realiseren realtime product
-2. Maak een morphological chart om systematisch ideeën te genereren
-3. Zorg dat je tenminste 10 ideeën hebt verzameld voor je verder gaat.
-
-##### Materiaal voor de brainstorm
-
-De twee onderstaande video’s helpen je bij het gebruiken van de Morphological chart als design thinking tool voor het genereren van ideeën:re
-
-- [Design Thinking for Education, Ep. 3: Morphological Charts](https://www.youtube.com/watch?v=sO4R8yCF2iw)
-- [Initial ideas Morphological analysis](https://www.youtube.com/watch?v=ijsQgOUt9s8)
 
 #### Planning
 In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat doen en maak je een planning.
@@ -73,26 +57,11 @@ In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat
 ### Ontwerpen
 In de ontwerpfase neem je ontwerpbeslissingen en zorg je dat je precies weet wat je moet gaan bouwen
 
-1. Kies onderbouwd, een van de ideeën en maak daar een ontwerp voor
-2. Begin met het schetsen van wireframes, check die bij medestudenten en docenten en verbeter ze met de nieuwe inzichten.
-3. Werk jouw wireframes uit in Figma en link ze aan elkaar zodat een digitale wireflow ontstaat.
-4. Maak de schematische weergave van de state van jouw applicatie in een ~~process-flow~~ activity-diagram.
-5. ~~Laat zien welke socket verbindingen gelegd worden in een data-lifecycle diagram.~~
 
 ### Bouwen
 In de bouwfase realiseer je de beslissingen uit de ontwerpfase.
 
-1. Voeg socket.io toe aan aan je project met behulp van npm install.
-2. Zorg dat er serverside en client-side naar basis events geluisterd wordt.
-3. Implementeer in kleine stapjes de functionaliteit voor jouw toepassing. Deel als het nodig is de stapjes in met behulp van een docent.
 
-ProTip: Je kunt je functionaliteit het beste op een losse branch uitwerken, deze branch kan je als dev-project in Adaptable of Railway live brengen zodat je live kunt testen.
-
-#### Materiaal bouwfase
-
-- [socket.io](https://socket.io/)
-- [socket.io documentatie](https://socket.io/docs/v4/)
-- [Barebonechat voorbeeld van ju5tu5@github](https://github.com/ju5tu5/barebonechat)
 
 ### Integreren
 In de integratiefase voer je de aanpassingen door zodat iedereen ze kan zien en er op verder kan bouwen. 
@@ -107,39 +76,24 @@ In de integratiefase voer je de aanpassingen door zodat iedereen ze kan zien en 
 
 - [Creating a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 - [GitHub, Aan een project bijdragen](https://git-scm.com/book/nl/v2/GitHub-Aan-een-project-bijdragen) (laat je niet afschrikken door de command line code, jij kunt daar prima GitHub Desktop voor gebruiken!)
-- [Adaptable.io](https://adaptable.io/)
-- [Railway](https://railway.app/)
+
 
 ### Testen
-In de testfase controleer je of jouw aanpassingen werken zoals bedoeld. Zoals je weet gaat de testfase over jouw eindgebruikers.
+In de testfase controleer je of jouw aanpassingen werken zoals bedoeld. 
 
-1. Doe een user-test met medestudenten of familieleden. Bereid de test voor met een testplan en noteer je plan én je bevindingen in de wiki.
-2. Doe een accessibility test met lighthouse - vergeet niet de handmatige tests uit te voeren - en noteer je bevindingen in de wiki.
-3. Doe een performance test met lighthouse en noteer je bevindingen in de wiki.
-4. Doe tenslotte een acceptatietest door jouw relatiegeschenk te presenteren aan de opdrachtgever en noteer je bevindingen in de wiki.
+
 
 ## Criteria
 *Definitions of done*
 
-Focus sprint 11 - De focus van deze sprint ligt op het maken van multi-user omgeving door het opzetten van een real-time verbinding tussen client en server. 
-
-### Deze leertaak hoort bij de gedragscriteria:
-
-M: Je houdt in beginnende mate rekening met de belangen van de eindgebruiker bij het realiseren van een oplossing voor een opdrachtgever.
-
-C: Je documenteert op professionele wijze en houdt voortgang bij.
-
-P: Je combineert aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving om een passende oplossing voor een opdrachtgever te realiseren.
-
-P: Je schetst om gedachten en processen te verkennen en abstracte begrippen over te brengen.
-
-L: Je maakt aangeboden en zelf gevonden materie eigen en gebruikt dit bij leertaken, deelt ervaring binnen de squad.
-
 Deze opdracht is done als:
 
-- [ ] Er staat een werkende real-time web app online en deze is door meerdere gebruikers tegelijk te gebruiken
-- [ ] Er is een nieuwe user story opgesteld voor de real-time functionaliteit
-- [ ] De functionaliteit werkt zoals verwacht
-- [ ] De app is gedocumenteerd in de Readme van het project
-- [ ] Alle beslissingen zijn navolgbaar in de wiki van het project
-- [ ] De opdrachtgever is blij verrast met het resultaat
+- [ ]  Je hebt je website samen ontworpen en gemaakt en de website is online gepubliceerd
+- [ ]  Je hebt je proces bijgehouden in de Wiki
+- [ ]  Je toont aan dat je in de analysefase verschillende methoden en technieken hebt ingezet om te inventariseren wat er moet gebeuren
+- [ ]  Je toont aan dat je in de ontwerpfase verschillende methoden en technieken hebt ingezet die ervoor zorgen dat je precies weet wat je moet bouwen
+- [ ]  Je toont aan dat je in de bouwfase verschillende server-side en client-side methoden en technieken hebt ingezet om het ontwerp te realiseren
+- [ ]  Je toont aan dat je in de testfase verschillende methoden en technieken hebt ingezet om te testen of jouw website voldoet aan standaarden en gebruiksvriendelijk is
+- [ ]  Je hebt client-side scripting gebruikt om een prettige UI te maken
+
+
