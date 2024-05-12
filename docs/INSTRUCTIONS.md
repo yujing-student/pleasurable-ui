@@ -6,7 +6,7 @@ Ontwerp en maak voor een opdrachtgever een interface waar gebruikers blij van wo
 
 Deze leertaak hoort bij sprint 11 "Pleasurable UI". Dit is een leertaak die je in een team uitvoert voor een opdrachtgever.
 
-In het college S11W1-01-Sprintplanning en de workshop S11W1-02-Projectboard wordt de opdracht en de werkwijze uitgelegd.
+In het college S11W1-01-Sprintplanning wordt de opdracht en de werkwijze uitgelegd.
 
 
 ## Doel van deze opdracht
