@@ -10,29 +10,33 @@ In het college S11W1-01-Sprintplanning en de workshop S11W1-02-Projectboard word
 
 
 ## Doel van deze opdracht
-
 Je leert hoe je met een team een interactieve website kan ontwerpen en maken.
 
 ## Werkwijze
-
 Je werkt in een team aan de website voor een opdrachtgever. Zorg er voor dat je duidelijk afspraken maakt en elkaar dagelijks op de hoogte houdt van vorderingen. Samen met jouw team ben je verantwoordelijk voor de planning, het samenwerkingsproces én het eindresultaat.
 
 Deze opdracht gaat over alle fases van de DLC [analyseren](#analyseren), [ontwerpen](#ontwerpen), [bouwen](#bouwen), [integreren](#integreren) en [testen](#testen).
 
-### Analyseren
-In de analysefase ga je na of wat jullie vorige sprint hebben vastgelegd over  hoe jullie [samenwerken](#samenwerken) nog klopt. Je houdt een [brainstom](#brainstorm) over het te realiseren real-time product. Ook onderzoek je wat jullie gaan maken en maak je een [planning](#planning). 
+## Analyseren
+In de analysefase inventariseer je wat er moet gebeuren om een taak uit te voeren. Inventariseer al het gemaakte werk, maak afspraken maken met je team en een planning. 
 
-#### Samenwerken
-In de analysefase herzie je als team afspraken over hoe je gaat samenwerken.
+### Sprintplanning
+1. Lees de instructies van deze leertaak met je team zorgvuldig door
+2. Bekijk de verschillende fases van de DLC en wat je per fase gaat doen
+3. Bekijk de [planning van sprint 11](https://programma.fdnd.nl/data-driven-web/pleasurable-ui) en wat je per week gaat doen
+4. Bespreek met het projectteam wat je aan werk verwacht en maak aantekeningen. (wat komt je bekend voor, wat heb je al vaker gedaan of wat lijkt je lastig)
+5. Bekijk het gemaakte werk van de teamleden zodat jullie al een beeld krijgen van wat er is gemaakt
 
-1. Fork deze leertaak en zet de _repository_ klaar voor het team zodat iedereen met dezelfde codebase kan werken. Kopieer de bestanden uit de vorige sprint en koppel Adaptable of Railway aan deze nieuwe omgeving. (Dit is handig omdat je de bewijslast uit vorige sprint intact laat.)
-3. Bekijk het Teamcanvas en vul het aan met eventuele inzichten uit de retrospect van vorige sprint, bespreek bijgestelde persoonlijke doelen met je teamgenoten. Loop als team de andere vlakken van het Teamcanvas na.
-5. Ga na welke afspraken jullie hadden over hoe jullie samenwerken, vul aan met nieuwe inzichten en leg de afspraken vast in de _wiki_.
+### Samenwerken & planning
+In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat doen en maak je een planning.
 
-#### Materiaal voor samenwerken
+1. Een teamlid forkt deze leertaak, de hoofd-repo, en voegt teamleden toe als 'collaborators'
+2. De andere teamleden forken de hoofd-repo, zo kun je makkelijk wijzigingen doorvoeren en ophalen
+3. Koppel het _project board_ aan de nieuwe gezamenlijke _repository_ om bij te kunnen houden wie wat doet.
 
-- [Adaptable.io](https://adaptable.io/)
-- [Railway](https://railway.app/)
+### Materiaal voor samenwerken
+
+
 - [How to Collaborate on GitHub](https://code.tutsplus.com/tutorials/how-to-collaborate-on-github--net-34267)
 - [download het Team Canvas](https://github.com/fdnd-task/performance-matters-fast-website/blob/main/docs/Teamcanvas.pdf)
 - [Lees instructies over het gebruik van het Teamcanvas in de deeltaak uit sprint 1](https://github.com/fdnd-task/your-tribe-team-canvas)
@@ -44,9 +48,6 @@ In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat
 
 1. Koppel het _project board_ aan de nieuwe gezamenlijke _repository_ om bij te kunnen houden wie wat doet.
 2. Plan voor de aankomende weken alle standups en reviews en noteer de planning in jullie _project board_.
-3. Bekijk álle _User Stories_ die bij het project horen. Bespreek met elkaar of er een user story bij zit die past bij de ideeën.
-4. Stel vervolgens samen een *real-time user story* op afgestemd op jullie ideeën. Maak zonnodig meerdere user stories.
-5. Maak voor de *real-time user story* meerdere taken aan in het *project board*, geef ze een prioriteit en voeg de namen toe van de mensen die eraan gaan werken. ProTip: Als taken te groot zijn (langer dan een dag duren) is het zinvol ze op te splitsen in meerdere kleinere taken.
 
 #### Materiaal planning
 
@@ -54,8 +55,31 @@ In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat
 - [Wat is een User Story?](https://agilescrumgroup.nl/wat-is-een-user-story/)
 - [What's Microproductivity?](https://blog.trello.com/microproductivity-break-tasks-into-smaller-steps)
 
-### Ontwerpen
+
+
+## Ontwerpen
 In de ontwerpfase neem je ontwerpbeslissingen en zorg je dat je precies weet wat je moet gaan bouwen
+
+In de ontwerpfase bepaal je met je team wat je gaat maken. Bepaal de [sitemap & UML diagram](#sitemap--uml-diagram) van jullie website en per pagina de url/routes, schets daarna een [wireframe & breakdown](#wireframe-wireflow--breakdown) per onderdeel van de website. Maak tot slot code-afspraken. 
+
+### Sitemap & UML Diagram
+Bepaal welke pagina's er gaan komen, welke url's daarbij horen en de data die erbij hoort.
+
+1. Teken een sitemap met alle pagina's voor de opdracht voor de opdrachtgever (overzicht-, detail-, formulierpagina, etc ...)
+2. Schrijf per pagina de url en de parameters die moet worden meegestuurd
+3. Werk alle routes uit: Schets de functies en methodes die worden uitgevoerd en de bijbehorende EJS
+4. Noteer welke data wordt opgehaald en of het een GET of POST is
+5. Schrijf ook op welke data wordt doorgegeven aan een volgende functie of methode
+
+### Wireframe, Wireflow & Breakdown
+Schets per pagina en onderdelen gezamenlijk een wireframe en/of wireflow en maak een breakdown van de HTML, CSS en/of Client-side Javascript. Het is belangrijk om dit gezamenlijk te doen, nu maak je met het team afspraken over code, semantiek en naamgeving. 
+
+Maak voor elke pagina, of onderdeel een ontwerp op basis van de huisstijl. (Bijvoorbeeld in Figma) Dit wordt het ontwerp dat jullie gaan realiseren. Het otnwerp zal tijdens de werkzaamheden veranderen. Dat is prima. Soms zal je de veranderingen bijhouden in het Figma file, soms is dat niet nodig. 
+
+### Code afspraken
+Maak code afspraken met je team over de Node-code, (semantische) HTML, gestructureerde CSS met custom properties en conventies.
+Denk na over de HTML structuur, en het voorkomen van layout shifts, toepassen van perceived performance en loading hints aan de browser en het toepassen van responsive images. maak afspraken over de volgorde van de CSS, van generiek-naar-specifiek. Bedenk een goede volgorde in de Node en de routing. Maak afspraken over het schrijven van comments. Etc ..
+
 
 
 ### Bouwen
