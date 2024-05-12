@@ -44,8 +44,6 @@ In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat
 
 
 ## Ontwerpen
-In de ontwerpfase neem je ontwerpbeslissingen en zorg je dat je precies weet wat je moet gaan bouwen
-
 In de ontwerpfase bepaal je met je team wat je gaat maken. Bepaal de [sitemap & UML diagram](#sitemap--uml-diagram) van jullie website en per pagina de url/routes, schets daarna een [wireframe & breakdown](#wireframe-wireflow--breakdown) per onderdeel van de website. Maak tot slot [code-afspraken](#code-afspraken). 
 
 ### Sitemap & UML Diagram
