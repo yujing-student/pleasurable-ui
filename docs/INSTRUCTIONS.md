@@ -28,12 +28,12 @@ In de analysefase inventariseer je wat er moet gebeuren om een taak uit te voere
 5. Bekijk het gemaakte werk van de teamleden zodat jullie een beeld krijgen van wat er is gemaakt
 
 ### Samenwerken & planning
-In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat doen en maak je een planning.
+In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat doen en maak je een planning. Er is veel werk aan de winkel deze sprint, maak dan ook afspraken om elke dag aan het project te werken. 
 
-1. Een teamlid forkt deze leertaak, de hoofd-repo, en voegt teamleden toe als 'collaborators'
+1. Één teamlid forkt de leertaak, de hoofd-repo, en voegt teamleden toe als 'collaborators'
 2. De andere teamleden forken de hoofd-repo, zo kun je makkelijk wijzigingen doorvoeren en ophalen
 3. Maak een _project board_ aan en koppel het aan de gezamenlijke _repository_ om bij te kunnen houden wie wat doet
-4. Plan voor de aankomende weken alle standups en reviews en noteer de planning in jullie _project board_
+4. Plan voor de aankomende weken alle standups en reviews en noteer de planning in jullie _project board_. 
 
 ### Materiaal voor samenwerken
 
