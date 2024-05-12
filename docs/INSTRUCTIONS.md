@@ -19,7 +19,8 @@ Zorg dat je duidelijk afspraken maakt en elkaar dagelijks op de hoogte houdt van
 Deze opdracht gaat over alle fases van de DLC [analyseren](#analyseren), [ontwerpen](#ontwerpen), [bouwen](#bouwen), [integreren](#integreren) en [testen](#testen).
 
 ## Analyseren
-In de analysefase inventariseer je wat er moet gebeuren om een taak uit te voeren. Inventariseer al het gemaakte werk, maak afspraken maken met je team en een planning. 
+In de analysefase inventariseer je wat er moet gebeuren om een taak uit te voeren. 
+Bekijk en bespreek al het gemaakte werk, maak afspraken met je team en een planning. 
 
 ### Sprintplanning
 1. Lees de instructies van deze leertaak met je team zorgvuldig door
