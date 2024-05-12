@@ -13,7 +13,8 @@ In het college S11W1-01-Sprintplanning wordt de opdracht en de werkwijze uitgele
 Je leert hoe je met een team een interactieve website kan ontwerpen en maken.
 
 ## Werkwijze
-Je werkt in een team aan de website voor een opdrachtgever. Zorg er voor dat je duidelijk afspraken maakt en elkaar dagelijks op de hoogte houdt van vorderingen. Samen met jouw team ben je verantwoordelijk voor de planning, het samenwerkingsproces én het eindresultaat.
+Je werkt in een team aan de website voor een opdrachtgever. 
+Zorg dat je duidelijk afspraken maakt en elkaar dagelijks op de hoogte houdt van vorderingen. Samen met jouw team ben je verantwoordelijk voor de planning, het samenwerkingsproces én het eindresultaat.
 
 Deze opdracht gaat over alle fases van de DLC [analyseren](#analyseren), [ontwerpen](#ontwerpen), [bouwen](#bouwen), [integreren](#integreren) en [testen](#testen).
 
