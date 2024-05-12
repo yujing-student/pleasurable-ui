@@ -27,7 +27,7 @@ Bekijk en bespreek al het gemaakte werk, maak afspraken met je team en een plann
 2. Bekijk de verschillende fases van de DLC en wat je per fase gaat doen
 3. Bekijk de [planning van sprint 11](https://programma.fdnd.nl/data-driven-web/pleasurable-ui) en wat je per week gaat doen
 4. Bespreek met het projectteam wat je aan werk verwacht en maak aantekeningen. (wat komt je bekend voor, wat heb je al vaker gedaan of wat lijkt je lastig)
-5. Bekijk het gemaakte werk van de teamleden zodat jullie een beeld krijgen van wat er is gemaakt
+5. Bekijk het gemaakte werk van de teamleden zodat jullie een duidelijk beeld krijgen van wat er al gemaakt is
 
 ### Samenwerken & planning
 In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat doen en maak je een planning. Er is veel werk aan de winkel deze sprint, maak dan ook afspraken om elke dag aan het project te werken. 
