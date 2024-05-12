@@ -33,7 +33,8 @@ In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat
 1. Één teamlid forkt de leertaak, de hoofd-repo, en voegt teamleden toe als 'collaborators'
 2. De andere teamleden forken de hoofd-repo, zo kun je makkelijk wijzigingen doorvoeren en ophalen
 3. Maak een _project board_ aan en koppel het aan de gezamenlijke _repository_ om bij te kunnen houden wie wat doet
-4. Plan voor de aankomende weken alle standups en reviews en noteer de planning in jullie _project board_. 
+4. Plan voor de aankomende weken alle standups en reviews en noteer de planning in jullie _project board_.
+5. Bespreek regelmatig met je team welke werkzaamheden er zijn, **wie wat wanneer** gaat doen. Gebruik het projectboard om grip te houden op de planning, sleep taken naar _done_ als ze klaar zijn, schrijf nieuwe taken als dat nodig is. 
 
 ### Materiaal voor samenwerken
 
@@ -68,6 +69,9 @@ Denk na over de HTML structuur, en het voorkomen van layout shifts, toepassen va
 
 ### Bouwen
 In de bouwfase realiseer je de beslissingen uit de ontwerpfase.
+
+
+
 
 
 
