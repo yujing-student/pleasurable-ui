@@ -37,7 +37,7 @@ Er is veel werk aan de winkel deze sprint, maak afspraken om elke dag aan het pr
 2. De andere teamleden forken de hoofd-repo, zo kun je makkelijk wijzigingen doorvoeren en ophalen
 3. Maak een _project board_ aan en koppel het aan de gezamenlijke _repository_ om bij te kunnen houden wie wat doet
 4. Plan voor de aankomende weken de reviews en noteer de planning in jullie _project board_.
-5. Bespreek regelmatig met je team welke werkzaamheden er zijn, **wie wat wanneer** gaat doen. Gebruik het projectboard om grip te houden op de planning, sleep taken naar _done_ als ze klaar zijn, schrijf nieuwe taken als dat nodig is. 
+5. Bespreek regelmatig met je team welke werkzaamheden er zijn, **wie wat wanneer** gaat doen. Gebruik het project board om grip te houden op de planning, sleep taken naar _done_ als ze klaar zijn, schrijf nieuwe taken als dat nodig is. 
 
 ### Materiaal voor samenwerken
 
@@ -51,18 +51,18 @@ Er is veel werk aan de winkel deze sprint, maak afspraken om elke dag aan het pr
 In de ontwerpfase bepaal je met je team wat je gaat maken. Bepaal de [sitemap & UML diagram](#sitemap--uml-diagram) van jullie website en per pagina de url/routes. Schets daarna een [wireframe & breakdown](#wireframe-wireflow--breakdown) per onderdeel van de website. Maak tot slot [code-afspraken](#code-afspraken). 
 
 ### Sitemap & UML Diagram
-Bepaal welke pagina's jullie gaan ontwerpen en bouwen, welke url's daarbij horen en de data die erbij hoort. Doe dit met het hele team zodat iedereen op de hoogte is en jullie ideeen kunnen uitwisselen:
+Bepaal welke pagina's jullie gaan ontwerpen en bouwen, welke url's daarbij horen en de data die erbij hoort. Doe dit met het hele team zodat iedereen op de hoogte is en jullie ideeën kunnen uitwisselen:
 
 1. Teken een sitemap met alle pagina's voor de opdracht voor de opdrachtgever (overzicht-, detail-, formulierpagina, etc ...)
 2. Schrijf per pagina de url en de parameters die moet worden meegestuurd
 3. Werk alle routes uit: Schets de functies en methodes die worden uitgevoerd en de bijbehorende EJS
-4. Noteer welke data wordt opgehaald en gepost met de  Directus-API en of het een GET of POST is
-5. Schrijf ook op welke data wordt doorgegeven aan een volgende functie of methode
+4. Noteer welke data wordt opgehaald en gepost met de Directus-API en of het een GET of POST is
+5. Schrijf ook op welke data wordt doorgegeven aan een volgende functie, methode of view
 
 ### Wireframe, Wireflow & Breakdown
 Schets per pagina en onderdelen gezamenlijk een wireframe en/of wireflow en maak een breakdown van de HTML, CSS en Client-side JS. Het is belangrijk om dit gezamenlijk te doen, nu maak je met het team afspraken over code, semantiek en naamgeving. 
 
-Maak voor elke pagina, of onderdeel een ontwerp op basis van de huisstijl. (Bijvoorbeeld in Figma) Dit wordt het ontwerp dat jullie gaan realiseren. Het ontwerp zal tijdens de werkzaamheden veranderen. Dat is prima. Soms zal je de veranderingen bijhouden in het Figma file, soms is dat niet nodig. 
+Maak voor elke pagina, of onderdeel, een ontwerp op basis van de huisstijl. (Bijvoorbeeld in Figma) Dit wordt het ontwerp dat jullie gaan realiseren. Het ontwerp zal tijdens de werkzaamheden veranderen. Dat is prima. Soms zal je de veranderingen bijhouden in het Figma file, soms is dat niet nodig. 
 
 ### Code afspraken
 Maak code afspraken met je team over de Node-code, (semantische) HTML, gestructureerde CSS en conventies.
