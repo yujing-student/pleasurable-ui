@@ -34,7 +34,7 @@ In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat
 Er is veel werk aan de winkel deze sprint, maak afspraken om elke dag aan het project te werken en hoe jullie elkaar op de hoogte houden van de vorderingen.
 
 1. Één teamlid forkt de leertaak, de hoofd-repo, en voegt teamleden toe als 'collaborators'
-2. De andere teamleden forken de hoofd-repo, zo kun je makkelijk wijzigingen doorvoeren en ophalen
+2. De andere teamleden clonen de hoofd-repo, zo kun je makkelijk wijzigingen doorvoeren en ophalen
 3. Maak een _project board_ aan en koppel het aan de gezamenlijke _repository_ om bij te kunnen houden wie wat doet
 4. Plan voor de aankomende weken de reviews en noteer de planning in jullie _project board_.
 5. Bespreek regelmatig met je team welke werkzaamheden er zijn, **wie wat wanneer** gaat doen. Gebruik het project board om grip te houden op de planning, sleep taken naar _done_ als ze klaar zijn, schrijf nieuwe taken als dat nodig is. 
