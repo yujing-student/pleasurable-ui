@@ -20,7 +20,7 @@ Deze opdracht gaat over alle fases van de DLC [analyseren](#analyseren), [ontwer
 
 ## Analyseren
 In de analysefase inventariseer je wat er moet gebeuren om de leertaak uit te voeren. 
-Bekijk en bespreek al het gemaakte werk, maak (afspraken met je team en een planning)[#samenwerken--planning]. 
+Bekijk en bespreek al het gemaakte werk, maak afspraken met je team en een [planning](samenwerken--planning). 
 
 ### Sprintplanning
 1. Lees de instructies van deze leertaak met je team zorgvuldig door
