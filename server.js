@@ -8,6 +8,7 @@ import fetchJson from './helpers/fetch-json.js'
 const huizenHome = await fetchJson('https://fdnd-agency.directus.app/items/f_houses')
 const feedback = await fetchJson('https://fdnd-agency.directus.app/items/f_feedback')
 const users = await fetchJson(`https://fdnd-agency.directus.app/items/f_users/?fields=*.*.`)
+const gelukt = 'uw score is toegevoegd';
 // this is neccessary for getting the users images
 const users_image = users.data.map(avatar => {
     console.log(avatar.avatar.id);
@@ -110,7 +111,8 @@ app.get('/test/:id', function (request, response) {
                 feedback: feedback[0],
                 rating: feedback[0].data[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan
                 users_image: users_image,
-                notities: feedback[0].data[2].note
+                notities: feedback[0].data[2].note,
+                succed:gelukt,
             });
         })
 })
@@ -145,7 +147,7 @@ app.post('/test/:id', async function (request, response) {
             if (request.body.enhanced) {
                 response.render('partials/showScore', {
                         result: apiResponse,
-                        score: rating,
+                    succed:gelukt,
 
 
 

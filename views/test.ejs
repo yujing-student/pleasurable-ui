@@ -103,6 +103,14 @@
     <!--                <div class="loader hide_loader"></div>-->
 
 </form>
+<p class="loading-state"></p>
+<div class=" div_show_score_house__output_number">
+    <!--             this ul must be here becuase it has other css than the ul of the partial-->
+    <ul class="show_user_score__ul">
+        <%- include('partials/showScore', {result: house}); -%>
+    </ul>
+
+</div>
 <section class="section-give_notes">
     <h2 class="">Notities</h2>
     <p>Hier kunt u een notitie achterlaten.</p>
@@ -123,7 +131,7 @@
 </ul>
 
 <h2>notitie</h2>
-
+<%- include('partials/showNotes', {result: house}); -%>
 
 
 <h2>Ratings:</h2>
