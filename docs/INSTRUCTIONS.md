@@ -19,8 +19,8 @@ Zorg dat je duidelijk afspraken maakt en elkaar dagelijks op de hoogte houdt van
 Deze opdracht gaat over alle fases van de DLC [analyseren](#analyseren), [ontwerpen](#ontwerpen), [bouwen](#bouwen), [integreren](#integreren) en [testen](#testen).
 
 ## Analyseren
-In de analysefase inventariseer je wat er moet gebeuren om een taak uit te voeren. 
-Bekijk en bespreek al het gemaakte werk, maak afspraken met je team en een planning. 
+In de analysefase inventariseer je wat er moet gebeuren om de leertaak uit te voeren. 
+Bekijk en bespreek al het gemaakte werk, maak (afspraken met je team en een planning)[#samenwerken--planning]. 
 
 ### Sprintplanning
 1. Lees de instructies van deze leertaak met je team zorgvuldig door
@@ -48,7 +48,10 @@ Er is veel werk aan de winkel deze sprint, maak afspraken om elke dag aan het pr
 
 
 ## Ontwerpen
-In de ontwerpfase bepaal je met je team wat je gaat maken. Bepaal de [sitemap & UML diagram](#sitemap--uml-diagram) van jullie website en per pagina de url/routes. Schets daarna een [wireframe & breakdown](#wireframe-wireflow--breakdown) per onderdeel van de website. Maak tot slot [code-afspraken](#code-afspraken). 
+In de ontwerpfase bepaal je met je team wat je gaat maken. 
+Bepaal de [sitemap & UML diagram](#sitemap--uml-diagram) van jullie website en per pagina de url/routes. 
+Schets daarna een [wireframe & breakdown](#wireframe-wireflow--breakdown) per onderdeel van de website. 
+Maak tot slot [code-afspraken](#code-afspraken). 
 
 ### Sitemap & UML Diagram
 Bepaal welke pagina's jullie gaan ontwerpen en bouwen, welke url's daarbij horen en de data die erbij hoort. Doe dit met het hele team zodat iedereen op de hoogte is en jullie ideeën kunnen uitwisselen:
