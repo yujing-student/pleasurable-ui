@@ -79,13 +79,21 @@ Denk na over de HTML structuur, en het voorkomen van layout shifts, toepassen va
 ### Bouwen
 In de bouwfase realiseer je de beslissingen uit de ontwerpfase. 
 Met het team werk je op 1 code base. 
-Zet je code Mobile First op en werk met Progressive Enhancement. 
-In je team werken jullie met de [feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). 
+Zet je code [Mobile First](#mobile-first) op en werk met [Progressive Enhancement](#progressive-enhancement). 
+In je team werken jullie met de [feature branches](#feature-branches).
 
 #### Feature branches
-Als je aan een feature gaat werken maak je eerst op GitHub een nieuwe _branch_ aan vanaf de main branch, vervolgens _pull_ je deze naar je lokale systeem. Je maakt veel commits en implementeert de 'feature'. Als je klaar bent push je alles naar github en doe je vanaf de feature-branch een pull-request naar main. In het pull-request wordt jouw code bekeken, getest en goedgekeurd door jouw teamleden. 
+Met je team ga je allemaal aan features werken, jullie maken verschillende variaties van dezelfde features, of je verdeeld de werkzaamheden en werkt an verschillende features. 
+
+Als je aan een feature gaat werken maak je eerst op GitHub een nieuwe _branch_ aan vanaf de main branch, vervolgens _pull_ je deze naar je lokale systeem. Je maakt regelmatig commits en implementeert de 'feature'. Als je klaar bent push je alles naar github en doe je vanaf de feature-branch een pull-request naar main. In het pull-request wordt jouw code bekeken, getest en goedgekeurd door jouw teamleden. 
 
 Pas de code afspraken toe en en doe een code-review met je team voordat je de code merged (integreert) met de main branch.
+
+#### Materiaal Feature branches
+
+[feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). 
+
+
 
 #### Mobile first
 Zorg dat je met je team Mobile First bouwt. Zet eerst de (semantische) HTML van de pagina's en/of onderdelen op. Pas daarna CSS toe om de huisstijl goed toe te passen. Voeg daarna media-queries of andere responsive CSS technieken toe voor M, L en of XL schermen. 
