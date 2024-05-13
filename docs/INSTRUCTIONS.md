@@ -42,8 +42,11 @@ Er is veel werk aan de winkel deze sprint, maak afspraken om elke dag aan het pr
 ### Materiaal voor samenwerken
 
 - [About Githhub Projects, quickstart en best practices](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-- [How to Collaborate on GitHub](https://code.tutsplus.com/tutorials/how-to-collaborate-on-github--net-34267)
-<!-- - [download het Team Canvas](https://github.com/fdnd-task/performance-matters-fast-website/blob/main/docs/Teamcanvas.pdf)-->
+- [Making a pull-request](https://www.atlassian.com/git/tutorials/making-a-pull-request)
+- [Using branches](https://www.atlassian.com/git/tutorials/using-branches)
+- [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+<!-- - [How to Collaborate on GitHub](https://code.tutsplus.com/tutorials/how-to-collaborate-on-github--net-34267) -->
+<!-- - [download het Team Canvas](https://github.com/fdnd-task/performance-matters-fast-website/blob/main/docs/Teamcanvas.pdf) -->
 <!-- - [Lees instructies over het gebruik van het Teamcanvas in de deeltaak uit sprint 1](https://github.com/fdnd-task/your-tribe-team-canvas) -->
 
 
