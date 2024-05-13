@@ -1,0 +1,41 @@
+<%- include('./partials/head') %>
+<%- include('./partials/navigation') %>
+
+<body>
+    <main>  
+        <section class="carousel">
+            <picture class="card-container">
+            <% house.gallery.forEach(image => { %>
+                <% if (image.directus_files_id.id) { %>
+                <img class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>" alt="foto huis" width="400" height="400">
+                <% } else { %>
+                <source class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>?format=webp" type="image/webp">
+                <source class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>?format=avif" type="image/avif">
+                <% } %>
+            <% }) %>
+            </picture>
+        </section>
+
+        <article class="detail">
+            <h2><%= house.street %></h2>
+            <ul>
+                <li><%= house.postal_code %> <%= house.city %></li>
+                <li><%= house.m2 %> m² <%= house.rooms %> kamers</li>
+                <li>€ <%= house.price %></li>
+            </ul>
+            <h2 class="description-line">Omschrijving</h2>
+        </article>
+
+        <article class="description">
+                
+            <p><%- house.description %></p>
+                
+            <div class="agent">
+                <h2>Makkelaar</h2>
+                <%- house.agent %>
+            </div>
+        </article>         
+    </main>
+</body>
+
+<%- include('./partials/foot') %>

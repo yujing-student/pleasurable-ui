@@ -1,0 +1,493 @@
+/****************************************************************
+                                                                *
+                            MAIN STYLING                        *                        
+                                                                *
+*****************************************************************/
+:root {
+  --color-main-text: #1B1B1B;
+  --white-primary-color: #FFFFFF;
+  --web-orange-primary-color: #F7A100;
+  --regent-blue-primary-color: #E6F2F7;
+  --lochmara-primary-color: #0071B3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-main-text);
+}
+
+/****************************************************************
+                                                                *
+                          Head.EJS Navbar                       *                        
+                                                                *
+*****************************************************************/
+
+/*********** mobile ***********/
+@media (min-width: 20rem) {
+  .logo {
+    width: 4.5em;
+  }
+
+  label.hamburger {
+    font-size: 20px;
+    position: relative;
+    right: 7px;
+    bottom: 5px;
+    fill: var(--color-main-text);
+  }
+
+
+  input[type="checkbox"], .hamburger {
+    float: right;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    display: none;
+  }
+
+  nav {
+    padding: 0.8em;
+    background-color: var(--web-orange-primary-color);
+    color: var(--white-primary-color);
+  }
+
+  nav > h3 {
+    float: right;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    font-size: 16px;
+  }
+
+  ul {
+    display: none;
+    padding: 0.5em;
+  }
+
+  li {
+    list-style-type: none;
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+
+  li a {
+    text-decoration: none;
+  }
+
+  li a:hover{
+    background-color: #FFE2FF;
+  }
+
+  #toggle:checked ~ ul {
+    display: block;
+    padding-top: 55px;
+  }
+
+  .nav-icons a > svg {
+    display: none;
+  }
+}
+
+/********** tablet  **********/
+@media (min-width: 45rem) {
+    .logo {
+      width: 5.5em;
+    }
+
+    input[type="checkbox"], label.hamburger {
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+      height: 30%;
+    }
+    
+    li a:hover{
+      background-color: #FFE2FF;
+    }
+
+    nav > ul {
+      display: block;
+    }
+
+    h3 {
+      display: none;
+    }
+
+    .nav-icons {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+    }
+
+    a > svg {
+      width: 30px;
+      padding-right: 10px;
+    }
+
+    .nav-icons a {
+      color: var(--white-primary-color);
+    }
+
+    .tablet-desktop a {
+      color: var(--white-primary-color);
+    }
+
+    .nav-icons a > svg {
+      fill: var(--white-primary-color);
+    }
+
+    .nav-icons > a{
+      padding-right: auto;
+    }
+
+    .nav-icons a > svg {
+      display: inline-block;
+      gap: 20px;
+    }
+
+    .tablet-desktop {
+      display: inline-flex;
+      flex-direction: row;
+      
+      gap: 16px;
+    }
+
+    input[type="checkbox"], label.hamburger {
+      display: none;
+    }
+  
+}
+
+/********** DESKTOP **********/
+@media (min-width: 55rem) {
+
+
+
+
+}
+
+/****************************************************************
+                                                                *
+                          Index.EJS Cards                       *                        
+                                                                *
+*****************************************************************/
+@media (min-width: 20rem) {
+  main {
+    margin: 16px;
+  
+    & h1 {
+      margin-bottom: 10px;
+    }  
+  
+    & hr {
+      background-color: var(--web-orange-primary-color);
+      margin-bottom: 10px;
+      width: 50px;
+      height: 5px;
+    }
+  }
+  
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    gap: 16px;
+    justify-content: center;
+    text-align: center;
+  }
+    
+    .grid-container {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .house-card {
+      width: 100%;
+      height: 40%;
+      object-fit: cover;
+    }
+  
+    .card-link:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: transparent;
+      z-index: 0;
+    }
+  
+    & article {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      font-size: 0.8em;
+    }
+  
+    & img {
+      border-radius: 5px 5px 0 0;
+      object-fit: fill;
+    }
+  
+    &  ul > a {
+      text-decoration: none;
+    }
+  
+    & ul > a:hover {
+      color: white;
+    }
+  
+    & article > ul,li {
+      display: block;
+      padding: 3px;
+    }
+}
+  
+  .card-favorites {
+    position: relative;
+    border: solid 0.1em var(--regent-blue-primary-color);
+    height: auto;
+    width: auto;
+    background-color: var(--white-primary-color);
+    /* border-radius: 3px; */
+    margin-bottom: 20px;
+    z-index: 0;
+  }
+  
+  article > h2,a {
+    text-decoration: none;
+    color: var(--color-main-text);
+  }
+
+
+
+/* TABLET */
+@media (min-width: 45rem) {
+
+    header {
+      margin-bottom: 50px;
+    }
+
+    .grid-container {
+      display: inline-grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .card-favorites {
+      /* position: relative; */
+      border: solid 0.1em black;
+      height: 450px;
+      width: 300px;
+      background-color: var(--white-primary-color);
+      border-radius: 16px;
+    }
+
+    img {
+      width: 50%;
+    }
+  
+}
+
+/* DESKTOP */
+@media (min-width: 55rem) {
+  .grid-container {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+  }
+
+  .card-favorites {
+    /* position: relative; */
+    border: solid 0.1em black;
+    height: 550px;
+    width: 500px;
+    background-color: var(--white-primary-color);
+    border-radius: 16px;
+  }
+}
+/****************************************************************
+                                                                *
+                        Index.EJS Ratings                       *                        
+                                                                *
+*****************************************************************/
+form {
+  z-index: 1;
+}
+
+input[type="radio"] {
+  display: none;
+}
+input 
+{
+  appearance: none;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  border: 3px solid #999;
+  margin-left: 1em;
+  position: relative;
+  top: 5px;
+  transition: 0.2s all linear;
+}
+label
+{
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #999;
+  padding: 1em;
+}
+
+/* The adjacent sibling combinator */
+/*  select label that is direct after the checked imput*/
+input:checked+label, 
+/* The general sibling combinator */
+/* select all labels, but not the labels after the selected input*/
+input+label:not(input:checked ~ label) 
+{
+  color: gold;
+}
+
+input:checked,
+input:not(input:checked ~ input)
+{
+  color: gold;
+}
+
+input:hover,
+label:hover
+{
+  color: black;
+  border-color: gold;
+  cursor: pointer;
+}
+
+svg {
+  width: 20px;
+}
+
+
+/****************************************************************
+                                                                *
+                        HUIS.EJS CAROUSEL                       *                        
+                                                                *
+*****************************************************************/
+.carousel {
+  width: 100%;
+  height: 166px;
+}
+
+.card-container {
+  width: 100%;
+  display: flex;
+  width: calc(100% - 16px);
+  margin: 8px;
+  flex: 0 0 calc(100% - 16px);
+}
+
+.card {
+  min-width: 250px;
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-main-text);
+  border-radius: 8px;
+}
+
+.card:hover {
+  background: var(--web-orange-primary-color);
+}
+
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  gap: 8px;
+}
+
+.card {
+  scroll-snap-align: start;
+}
+
+/****************************************************************
+                                                                *
+                          HUIS.EJS TEKST                        *                        
+                                                                *
+*****************************************************************/
+.detail {
+  border-top: solid 0.2em var(--color-main-text);
+  margin-top: 5em;
+  padding-top: 2em;
+}
+
+.detail > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 1em;
+  gap: 1em;
+}
+
+.description-line {
+  border-top: solid 0.2em var(--web-orange-primary-color);
+  margin-top: 1em;
+  padding-top: 1em;
+  width: 100%;
+  text-align: center;
+}
+
+.description {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.agent {
+  border: solid 0.2em var(--color-main-text);
+  padding: 5em;
+  text-align: center;
+  background: var(--secondary-bg-color);
+  
+  & p {
+    padding-bottom: 1em;
+  }
+}
+
+
+
+

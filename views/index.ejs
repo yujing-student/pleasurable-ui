@@ -1,0 +1,47 @@
+<%- include('./partials/head') %>
+<%- include('./partials/navigation') %>
+
+<body>
+    <main>  
+        <header>
+            <h1>Favorieten</h1>
+            <hr>
+            <p>In dit overzicht vind je al jouw favoriete huizen terug.</p>
+        </header>
+        
+        <div class="container">
+            <div class="grid-container">
+                <% alleHuizen.forEach((huis, index) => { %>
+                    <div class="card-favorites">
+                        <picture>
+                            <source srcset="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>?format=webp" type="image/webp">
+                            <source srcset="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>?format=avif" type="image/avif">
+                            <img src="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>" alt="foto huis" width="400" height="400"  class="house-card">
+                        </picture>  
+
+                        <article>
+                            <ul>
+                                <h2><a class="card-link" href="./huis/<%= huis.id %>"><%= huis.street%> <%= huis.house_nr%></a></h2>
+                                <li>€ <%- huis.price %></li>
+                            </ul>
+                            <ul>
+                                <li><%- huis.postal_code %> <%- huis.city %></li>
+                                <li><%- huis.m2 %> m² • <%- huis.rooms %> Kamers</li>
+                            </ul>
+                            <ul>
+                                <li><%- huis.m2 %></li>
+                                <li><%- huis.agent %></li>
+                            </ul>
+
+                            <form action="/" method="post" class="ratingsFavorieten">
+                                <%- include('./partials/detailed-rating', {index: index}) %> <!-- Partials meegegen dit is de form in detailed-rating.ejs de waardes en radio input worden ook meegeven als een object-->
+                            </form>
+                        </article> 
+                    </div>
+                <% }) %>
+            </div>
+        </div> 
+    </main>
+</body>
+
+<%- include('./partials/foot') %>
