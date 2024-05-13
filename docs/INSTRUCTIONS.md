@@ -83,7 +83,7 @@ Zet je code Mobile First op en werk met Progressive Enhancement.
 In je team werken jullie met de [feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). 
 
 #### Feature branches
-Als je aan een feature gaat werken maak je eerst een _branch_ aan, _pull_ je deze naar je systeem. Je maakt veel commits en implementeert de 'feature'. Als je klaar bent push je alles naar github en doe je een pull-request naar de main branch. In het pull-request wordt jouw code getest en goedgekeurd door jouw teamleden. 
+Als je aan een feature gaat werken maak je eerst op GitHub een nieuwe _branch_ aan vanaf de main branch, vervolgens _pull_ je deze naar je lokale systeem. Je maakt veel commits en implementeert de 'feature'. Als je klaar bent push je alles naar github en doe je vanaf de feature-branch een pull-request naar main. In het pull-request wordt jouw code bekeken, getest en goedgekeurd door jouw teamleden. 
 
 Pas de code afspraken toe en en doe een code-review met je team voordat je de code merged (integreert) met de main branch.
 
