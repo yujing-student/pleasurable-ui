@@ -7,10 +7,10 @@
             <picture class="card-container">
             <% house.gallery.forEach(image => { %>
                 <% if (image.directus_files_id.id) { %>
-                <img class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>" alt="foto huis" width="400" height="400">
+                <img class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>" alt="foto huis" width="200" height="100">
                 <% } else { %>
-                <source class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>?format=webp" type="image/webp">
-                <source class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>?format=avif" type="image/avif">
+                        <srcset class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>?format=webp" width="200" height="100" type="image/webp"></srcset>
+                        <srcset class="card" src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id %>?format=avif" width="200" height="100" type="image/avif"></srcset>
                 <% } %>
             <% }) %>
             </picture>

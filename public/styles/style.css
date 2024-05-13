@@ -73,9 +73,9 @@ body {
     left: 20px;
     font-size: 16px;
   }
-
+  /*waarom stond deze ul op display none? dat is niet handig vanwege de beoordelingpagina*/
   ul {
-    display: none;
+    /*display: none;*/
     padding: 0.5em;
   }
 
@@ -293,15 +293,17 @@ body {
 
     .grid-container {
       display: inline-grid;
-      grid-template-columns: repeat(2, 1fr);
+      /*hiermee gebruik je autofit zodat er automatisch een colum bij komt als er genoeg ruimte is*/
+      grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
       gap: 2rem;
     }
 
     .card-favorites {
       /* position: relative; */
       border: solid 0.1em black;
-      height: 450px;
-      width: 300px;
+      /*hiermee is de sterren uit de kaart op index*/
+      /*height: 450px;*/
+      /*width: 300px;*/
       background-color: var(--white-primary-color);
       border-radius: 16px;
     }
@@ -314,17 +316,19 @@ body {
 
 /* DESKTOP */
 @media (min-width: 55rem) {
-  .grid-container {
-    display: inline-grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-  }
+  /*dit is onnodig*/
+  /*.grid-container {*/
+  /*  display: inline-grid;*/
+  /*  grid-template-columns: repeat(3, 1fr);*/
+  /*  justify-content: center;*/
+  /*}*/
 
   .card-favorites {
     /* position: relative; */
     border: solid 0.1em black;
-    height: 550px;
-    width: 500px;
+    /*hiermee is de sterren uit de kaart op index*/
+    /*height: 550px;*/
+    /*width: 500px;*/
     background-color: var(--white-primary-color);
     border-radius: 16px;
   }
@@ -341,18 +345,32 @@ form {
 input[type="radio"] {
   display: none;
 }
-input 
-{
-  appearance: none;
-  border-radius: 50%;
-  width: 2em;
+/*dit is vanege de testscore pagina*/
+.input_numbers{
+  /*appearance: none;*/
+  /*border-radius: 50%;*/
+  /*width: 2em;*/
   height: 2em;
-  border: 3px solid #999;
+  /*border: 3px solid #999;*/
   margin-left: 1em;
   position: relative;
   top: 5px;
   transition: 0.2s all linear;
 }
+/*dit staat uitgecomment vanwege de nummers die ik wil invoeren op de beoordleingpagina*/
+/*input */
+/*{*/
+/*  appearance: none;*/
+/*  border-radius: 50%;*/
+/*  width: 2em;*/
+/*  height: 2em;*/
+/*  border: 3px solid #999;*/
+/*  margin-left: 1em;*/
+/*  position: relative;*/
+/*  top: 5px;*/
+/*  transition: 0.2s all linear;*/
+/*}*/
+
 label
 {
   font-size: 1.5em;

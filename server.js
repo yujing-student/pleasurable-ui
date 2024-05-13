@@ -7,7 +7,18 @@ import fetchJson from './helpers/fetch-json.js'
 // variable voor de index route
 const huizenHome = await fetchJson('https://fdnd-agency.directus.app/items/f_houses')
 const feedback = await fetchJson('https://fdnd-agency.directus.app/items/f_feedback')
+const users = await fetchJson(`https://fdnd-agency.directus.app/items/f_users/?fields=*.*.`)
+// this is neccessary for getting the users images
+const users_image = users.data.map(avatar => {
+    console.log(avatar.avatar.id);
+    return {
+        id_avatar: avatar.avatar.id,
+        width: avatar.avatar.width,
+        height: avatar.avatar.height,
+        name: avatar.name
 
+    };
+});
 // hier maak ik een nieuwe express app aan
 const app = express()
 
@@ -64,6 +75,95 @@ app.get('/huis/:id', function (request, response) {
 });
 
 
+app.get('/test/:id', function (request, response) {
+    const feedback = fetchJson(`https://fdnd-agency.directus.app/items/f_feedback/?fields=*.*.*.*`)
+
+    const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?fields=`;
+    const houseUrl = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*`;
+
+    // use a promise.all because the tables are not connected to each other
+    Promise.all([
+        fetchJson(feedbackUrl),
+        fetchJson(houseUrl)
+    ])
+        .then(async (feedback) => {
+            const feedbackdetails = feedback[0]; // Assuming feedback is directly an array of objects
+            const house = feedback[1]; // Assuming house data is in the second response
+
+            //
+            // console.log(JSON.stringify(feedbackdetails))
+            // console.log(JSON.stringify(house))
+            //
+            // // console.log(feedback);
+            //
+            //
+            // console.log(feedback[0].data[0].id+'dit is het id');
+            // console.log(feedback[0].data[0].note+'dit is de notitie');
+            // console.log(feedback[0].data[0].rating.ligging+'dit is de beoordeling en house is een object met daarin weer keys en values')
+            // console.log(feedback[0].data[0].rating.algemeen+'dit is de beoordeling en house is een object met daarin weer keys en values')
+            //
+            // // feedback["1"].data.id
+            // // Render the data with the arrays
+            // console.log(JSON.stringify(feedback[0]))
+            response.render('test', {
+                house: feedback[1].data,
+                feedback: feedback[0],
+                rating: feedback[0].data[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan
+                users_image: users_image,
+                notities: feedback[0].data[2].note
+            });
+        })
+})
+
+app.post('/test/:id', async function (request, response) {
+//this is the empty object
+
+    const newScore = {
+        general: request.body.algemeenNumber,
+        kitchen: request.body.keukenNumber,
+        bathroom: request.body.badkamerNumber,
+        garden: request.body.tuinNumber,
+        new: request.body.new,
+    };
+    const note = {note: request.body.note}
+// make the post route
+    fetch(`https://fdnd-agency.directus.app/items/f_feedback/?fields=*.*.*.*`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json', // Set appropriate header
+        },
+        body: JSON.stringify({
+            "house": request.params.id,
+            "list": 7,
+            "user": 5,
+            rating: newScore,
+            note: note,
+        }),
+    })
+        .then(async (apiResponse) => {
+            // if the enhanced is true do this en the render is the partial
+            if (request.body.enhanced) {
+                response.render('partials/showScore', {
+                        result: apiResponse,
+                        score: rating,
+
+
+
+                        //     todo hier nog een repsonse.bdy met tekst 'uw huis is tegevoegd'
+                    }
+                )
+            }
+            // the else is commented because if it is not working the full page is show in the beoordeling
+
+            // else {
+            //     response.redirect(303, '/score/' + request.params.id)
+            // }
+
+        })
+        .catch(error => {
+            console.error('Error making POST request:', error);
+        });
+})
 
     
 
