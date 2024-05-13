@@ -1,0 +1,32 @@
+{
+  "name": "pleasurable-ui",
+  "version": "1.0.0",
+  "description": "Ontwerp en maak voor een opdrachtgever een interface waar gebruikers blij van worden.",
+  "main": "server.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fdnd-task/pleasurable-ui.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "ejs"
+  ],
+  "author": "J.P. Sturkenboom <j.p.sturkenboom@hva.nl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fdnd-task/pleasurable-ui/issues"
+  },
+  "homepage": "https://github.com/fdnd-task/pleasurable-ui#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}
