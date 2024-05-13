@@ -42,7 +42,7 @@ Er is veel werk aan de winkel deze sprint, maak afspraken om elke dag aan het pr
 ### Materiaal voor samenwerken
 
 - [About Githhub Projects, quickstart en best practices](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-- [Making a pull-request](https://www.atlassian.com/git/tutorials/making-a-pull-request)
+- [Making a pull-request](https://www.atlassian.com/git/tutorials/making-a-pull-request) (nb. wij gebruiken de feature-branch workflow)
 - [Using branches](https://www.atlassian.com/git/tutorials/using-branches)
 - [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 <!-- - [How to Collaborate on GitHub](https://code.tutsplus.com/tutorials/how-to-collaborate-on-github--net-34267) -->
