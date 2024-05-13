@@ -79,24 +79,19 @@ Denk na over de HTML structuur, en het voorkomen van layout shifts, toepassen va
 ### Bouwen
 In de bouwfase realiseer je de beslissingen uit de ontwerpfase. 
 Met het team werk je op 1 code base. 
-Zet je code Mobile First op en werk Progressive Enhancement. 
-In je team ga je werken met feature branches. 
+Zet je code Mobile First op en werk met Progressive Enhancement. 
+In je team werken jullie met de [feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). 
 
 #### Feature branches
-Als je aan een feature gaat werken maak je eerst een _branch_ aan, _pull_ je deze naar je systeem en doe je een pull-request naar de main branch als je klaar bent en de code is getest en goedgekeurd. 
+Als je aan een feature gaat werken maak je eerst een _branch_ aan, _pull_ je deze naar je systeem. Je maakt veel commits en implementeert de 'feature'. Als je klaar bent push je alles naar github en doe je een pull-request naar de main branch. In het pull-request wordt jouw code getest en goedgekeurd door jouw teamleden. 
 
-Pas de code afspraken toe en en doe een code-review met je team voordat je de code integreert met de main branch.
+Pas de code afspraken toe en en doe een code-review met je team voordat je de code merged (integreert) met de main branch.
 
 #### Mobile first
 Zorg dat je met je team Mobile First bouwt. Zet eerst de (semantische) HTML van de pagina's en/of onderdelen op. Pas daarna CSS toe om de huisstijl goed toe te passen. Voeg daarna media-queries of andere responsive CSS technieken toe voor M, L en of XL schermen. 
 
 #### Progressive Enhancement
 Bouw de website volgens het principe van Progressive Enhancement. Zorg dat eerst de _functional_ en _reliable_ laag het goed doet, daarna de _usable_ laag, voordat je gaat experimenteren met de _pleasurable UI_. 
-
-
-
-
-
 
 ### Integreren
 In de integratiefase voer je de aanpassingen door zodat iedereen ze kan zien en er op verder kan bouwen. 
