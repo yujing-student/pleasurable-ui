@@ -64,7 +64,24 @@ app.post('/', function (request, response) {
     console.log(request.body)
     response.redirect(300, '/')
 })
+app.get('/lists/:id', async function (request, response) {
+    fetchJson(`https://fdnd-agency.directus.app/items/f_list/${request.params.id}?fields=*.*.*.*`)
+        // .then is used after the fetchjosn is succesful
+        .then(lists => {
+            if (lists.data) {//check if data exist
+                response.render('lists', //render the ejs file in your views directory
+                    {
+                        //     here i give the object with the varaible
+                        list: lists.data,
+                        users: usersUrl.data
+                    });
+            } else {
+                // if not found
+                console.error('No list data found');
 
+            }
+        })
+});
 
 app.get('/huis/:id', function (request, response) {
     // request.params.id gebruik je zodat je de exacte huis kan weergeven dit is een routeparmater naar de route van die huis
