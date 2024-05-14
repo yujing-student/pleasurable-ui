@@ -282,6 +282,27 @@ body {
     color: var(--color-main-text);
   }
 
+  .btn__container {
+    margin-top: 20px;
+  }
+
+  .btn-popup {
+    font-size: 1em;
+    padding: 10px;
+    background-color: var(--regent-blue-primary-color);
+    color: var(--color-main-text);
+    border: 2px solid var(--web-orange-primary-color);
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    position: relative;
+    z-index: 1; 
+  }
+
+  .btn-popup:hover {
+    background-color: var(--web-orange-primary-color);
+  }
 
 
 /* TABLET */

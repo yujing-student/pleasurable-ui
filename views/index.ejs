@@ -20,22 +20,20 @@
                         </picture>  
 
                         <article>
-                            <ul>
+                            <ol>
                                 <h2><a class="card-link" href="./huis/<%= huis.id %>"><%= huis.street%> <%= huis.house_nr%></a></h2>
                                 <li>€ <%- huis.price %></li>
-                            </ul>
-                            <ul>
+                        
                                 <li><%- huis.postal_code %> <%- huis.city %></li>
                                 <li><%- huis.m2 %> m² • <%- huis.rooms %> Kamers</li>
-                            </ul>
-                            <ul>
+                            
                                 <li><%- huis.m2 %></li>
                                 <li><%- huis.agent %></li>
-                            </ul>
 
-                            <form action="/" method="post" class="ratingsFavorieten">
-                                <%- include('./partials/detailed-rating', {index: index}) %> <!-- Partials meegegen dit is de form in detailed-rating.ejs de waardes en radio input worden ook meegeven als een object-->
-                            </form>
+                                <div class="btn__container">
+                                    <a class="btn-popup" href="">Rate dit huis</a>
+                                </div>
+                            </ol>
                         </article> 
                     </div>
                 <% }) %>
@@ -45,3 +43,4 @@
 </body>
 
 <%- include('./partials/foot') %>
+
