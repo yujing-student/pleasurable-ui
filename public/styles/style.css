@@ -246,11 +246,12 @@ body {
       padding: 0;
       font-size: 0.8em;
     }
-  
-    & img {
-      border-radius: 5px 5px 0 0;
-      object-fit: fill;
-    }
+
+    /*dit heeft invloed op alle images en dat is niet altijd handig*/
+    /*& img {*/
+    /*  border-radius: 5px 5px 0 0;*/
+    /*  object-fit: fill;*/
+    /*}*/
   
     &  ul > a {
       text-decoration: none;
@@ -309,7 +310,9 @@ body {
     }
 
     img {
-      width: 50%;
+      /*dit krijg je nu op alle images*/
+      /*width: 50%;*/
+
     }
   
 }
@@ -505,9 +508,13 @@ article {
     padding-bottom: 1em;
   }
 }
+/*dit moet op de index komen te staan in de juiste volgorde*/
+.users__show_avatars{
+  width: 200px;
+  height: auto;
+}
 
-
-
+/*dit is op score test*/
 .loader {
   width: 50px;
   aspect-ratio: 1;
