@@ -10,19 +10,27 @@
             <hr>
             <p>In dit overzicht vind je al jouw favoriete huizen terug.</p>
         </header>
-        
 
 
-            <% data.forEach( user => {%>
-                <ul>
-                    <li><%= user.name %></li>
-                    <li>
-                        <picture>
 
-                    </picture>
-                    </li>
-                </ul>
-            <% }); %>
+        <ul class="ul-users_lijst">
+            <% users.forEach(users => { %>
+                <li><%= users.name %></li>
+
+                <li class="users__li_lijst">
+
+                        <img src="https://fdnd-agency.directus.app/assets/<%= users.Avatar %>?width=600&height=400&fit=cover"
+                             alt="House Image" width="<%= users.width %>"
+                             height=" <%= users.height %>" class="users__show_avatars"
+                        >
+
+
+                </li>
+
+            <% }) %>
+
+
+        </ul>
             <div class="grid-container">
                 <% alleHuizen.forEach((huis, index) => { %>
                     <div class="card-favorites">

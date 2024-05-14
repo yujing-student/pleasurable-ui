@@ -11,18 +11,27 @@ const feedback = await fetchJson('https://fdnd-agency.directus.app/items/f_feedb
 const gelukt = 'uw score is toegevoegd';
 
 // this is neccessary for getting the users images
-const users = await fetchJson(`https://fdnd-agency.directus.app/items/f_users/?fields=*.*.*`)
-console.log(JSON.stringify(users.data.id_avatar))
-// const users_image = users.data.map(avatar => {
-//     console.log(avatar.avatar.id);
-//     return {
-//         id_avatar: avatar.avatar.id,
-//         width: avatar.avatar.width,
-//         height: avatar.avatar.height,
-//         name: avatar.name
-//
-//     };
-// });
+const url = await fetchJson(`https://fdnd-agency.directus.app/items/f_users/?fields=*.*`)
+
+// // this is neccessary for getting the users images
+const users_image = url.data.map(avatar => {
+    if (avatar) {
+        return {
+            id_avatar: avatar.avatar?.id,
+            width: avatar.avatar?.width,
+            height: avatar.avatar?.height,
+            name: avatar.name
+        };
+    } else {
+        // Handle missing avatar data or name gracefully
+        console.error("Error processing user:", avatar);
+        return null; // Or any placeholder value
+    }
+});
+
+
+
+
 
 // hier maak ik een nieuwe express app aan
 const app = express()
@@ -47,13 +56,15 @@ app.get('/', async function (request, response) {
 
     const lists = await fetchJson(`https://fdnd-agency.directus.app/items/f_list/${request.params.id}?fields=*.*.*.*`)
 
-    // users.data["0"].avatar
-    console.log(JSON.stringify(users.data))
+    console.log(JSON.stringify(url.data[5].avatar))
     response.render('index', {
         alleHuizen: huizenHome.data,
         alleRatings: feedback.data,
         ratings: ratings,
-        data: users.data,
+        users: url.data,
+
+
+
 
 
     });
@@ -69,30 +80,30 @@ app.get('/', async function (request, response) {
 //         response.render('notes', {data: userData.data, lists: listData.data});
 //     });
 // });
-app.post('/', function (request, response) { 
-  ratings = request.body.star
-  console.log(request.body)
-  response.redirect(300, '/')
+app.post('/', function (request, response) {
+    ratings = request.body.star
+    console.log(request.body)
+    response.redirect(300, '/')
 })
 
 
 app.get('/huis/:id', function (request, response) {
-  // request.params.id gebruik je zodat je de exacte huis kan weergeven dit is een routeparmater naar de route van die huis
-  const url = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*.*`
-  fetchJson(url).then((apiData) => {
-    if (apiData.data) {/*als data voer dan dit uit */
-      // console.log('data bestaat u gaat nu naar de Detailpage page'+JSON.stringify(apiData))
-      // info gebruiken om die te linken aan apidata.data
-      response.render('huis', {house: apiData.data});
-      // console.log(apiData)
-    } else {
-      console.log('No data found for house with id: ' + request.params.id);
-      //     laat de error zien als de data al niet gevonden word
-    }
-  })
-  .catch((error) => {
-      console.error('Error fetching house data:', error);
-  });
+    // request.params.id gebruik je zodat je de exacte huis kan weergeven dit is een routeparmater naar de route van die huis
+    const url = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*.*`
+    fetchJson(url).then((apiData) => {
+        if (apiData.data) {/*als data voer dan dit uit */
+            // console.log('data bestaat u gaat nu naar de Detailpage page'+JSON.stringify(apiData))
+            // info gebruiken om die te linken aan apidata.data
+            response.render('huis', {house: apiData.data});
+            // console.log(apiData)
+        } else {
+            console.log('No data found for house with id: ' + request.params.id);
+            //     laat de error zien als de data al niet gevonden word
+        }
+    })
+        .catch((error) => {
+            console.error('Error fetching house data:', error);
+        });
 });
 
 
@@ -132,7 +143,7 @@ app.get('/test/:id', function (request, response) {
                 feedback: feedback[0],
                 rating: feedback[0].data[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan
                 notities: feedback[0].data[2].note,
-                succed:gelukt,
+                succed: gelukt,
             });
         })
 })
@@ -167,7 +178,7 @@ app.post('/test/:id', async function (request, response) {
             if (request.body.enhanced) {
                 response.render('partials/showScore', {
                         result: apiResponse,
-                    succed:gelukt,
+                        succed: gelukt,
                         //     todo hier nog een repsonse.bdy met tekst 'uw huis is tegevoegd'
                     }
                 )
@@ -217,7 +228,7 @@ app.post('/radio/:id', function (request, response) {
         },
     }).then((postResponse) => {
         console.log(postResponse)
-        response.redirect(303, '/radio/'+request.params.id);
+        response.redirect(303, '/radio/' + request.params.id);
     })
 })
 
@@ -226,6 +237,6 @@ app.set('port', process.env.PORT || 8001)
 
 // Start express op, haal daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {
-  // Toon een bericht in de console en geef het poortnummer door
-  console.log(`Application started on http://localhost:${app.get('port')}`)
+    // Toon een bericht in de console en geef het poortnummer door
+    console.log(`Application started on http://localhost:${app.get('port')}`)
 })
