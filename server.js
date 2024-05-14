@@ -54,9 +54,12 @@ let ratings = ''
 // Get Route voor de index
 app.get('/', async function (request, response) {
 
-    const lists = await fetchJson(`https://fdnd-agency.directus.app/items/f_list/${request.params.id}?fields=*.*.*.*`)
+    const test = await fetchJson(`https://fdnd-agency.directus.app/items/f_list/${request.params.id}?fields=*.*.*.*`)
+    const lists = await fetchJson(`https://fdnd-agency.directus.app/items/f_list/?fields=*.*.*.*`)
 
-    console.log(JSON.stringify(url.data[5].avatar))
+    console.log(JSON.stringify(url.data[5].avatar.id)+'dit is het user id van de avatar')
+    console.log(JSON.stringify(url.data)+' dit is het user naam van de user')
+    console.log(JSON.stringify(lists.data)+' dit is de lijst')
     response.render('index', {
         alleHuizen: huizenHome.data,
         alleRatings: feedback.data,
@@ -228,7 +231,7 @@ app.post('/radio/:id', function (request, response) {
         },
     }).then((postResponse) => {
         console.log(postResponse)
-        response.redirect(303, '/radio/' + request.params.id);
+        response.redirect(303, '/radio/:id');
     })
 })
 
