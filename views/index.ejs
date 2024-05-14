@@ -2,14 +2,14 @@
 <%- include('./partials/navigation') %>
 
 <body>
-    <main>  
-        <header>
+    <main class="container">
+        <header class="index-favorite-header">
             <h1>Favorieten</h1>
             <hr>
             <p>In dit overzicht vind je al jouw favoriete huizen terug.</p>
         </header>
         
-        <div class="container">
+
 
             <% data.forEach( user => {%>
                 <ul>
@@ -51,7 +51,6 @@
                     </div>
                 <% }) %>
             </div>
-        </div>
 
     </main>
 </body>

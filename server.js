@@ -150,7 +150,7 @@ app.post('/test/:id', async function (request, response) {
     const note = {note: request.body.note}
 // make the post route
     fetch(`https://fdnd-agency.directus.app/items/f_feedback/?fields=*.*.*.*`, {
-        method: 'POST',
+        method: 'patchen',
         headers: {
             'Content-Type': 'application/json', // Set appropriate header
         },

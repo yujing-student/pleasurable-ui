@@ -32,7 +32,7 @@ body {
 *****************************************************************/
 
 /*********** mobile ***********/
-@media (min-width: 20rem) {
+/*@media (min-width: 20rem) {*/
   .logo {
     width: 4.5em;
   }
@@ -101,7 +101,7 @@ body {
   .nav-icons a > svg {
     display: none;
   }
-}
+/*}*/
 
 /********** tablet  **********/
 @media (min-width: 45rem) {
@@ -192,7 +192,7 @@ body {
                           Index.EJS Cards                       *                        
                                                                 *
 *****************************************************************/
-@media (min-width: 20rem) {
+/*@media (min-width: 20rem) {*/
   main {
     margin: 16px;
   
@@ -203,10 +203,12 @@ body {
     & hr {
       background-color: var(--web-orange-primary-color);
       margin-bottom: 10px;
-      width: 50px;
+      /*width: 50px;*/
       height: 5px;
+      margin-left: 2em;
+      margin-right: 2em;
     }
-  }
+  /*}*/
   
   
   .container {
@@ -217,11 +219,11 @@ body {
     justify-content: center;
     text-align: center;
   }
-    
-    .grid-container {
-      display: flex;
-      flex-direction: column;
-    }
+    /*weghalen vanwege de grid kaartjes*/
+    /*.grid-container {*/
+    /*  display: flex;*/
+    /*  flex-direction: column;*/
+    /*}*/
   
     .house-card {
       width: 100%;
@@ -514,6 +516,11 @@ article {
   height: auto;
 }
 
+.index-favorite-header{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
 /*dit is op score test*/
 .loader {
   width: 50px;
