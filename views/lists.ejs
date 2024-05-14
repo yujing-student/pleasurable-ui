@@ -13,7 +13,6 @@
         <ul class="ul-users_lijst">
             <% users.forEach(users => { %>
                 <li><%= users.name %></li>
-                <li><%= users.id %></li>
 
                 <li class="users__li_lijst">
                     <% if (users.avatar) { %>
@@ -26,6 +25,7 @@
                 </li>
 
             <% }) %>
+        </ul>
     </section>
 
     <div class="div-grid-house-lists">
@@ -33,7 +33,11 @@
 
 
             <ol class="ol_names-of-houses">
+                <li>
 
+
+                </li>
+                <li><%= list.houses.f_houses_id %></li>
                 <!--                  todo  een before gebruiken voor het klikbaar maken van de gehele kaart zie code lesley-->
                 <li>
                     <a href="/lijsten/<%= list.id %>" aria-label="ga naar deze lijst"></a>

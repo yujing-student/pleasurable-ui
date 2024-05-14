@@ -64,16 +64,21 @@ app.post('/', function (request, response) {
     console.log(request.body)
     response.redirect(300, '/')
 })
+
+
+// http://localhost:8001/lists/7
 app.get('/lists/:id', async function (request, response) {
     fetchJson(`https://fdnd-agency.directus.app/items/f_list/${request.params.id}?fields=*.*.*.*`)
         // .then is used after the fetchjosn is succesful
+
+        // console.log(JSON.stringify(lists.data.houses["0"].f_houses_id.poster_image.id)+'dit is het ophalen van de image van een huis')
         .then(lists => {
             if (lists.data) {//check if data exist
                 response.render('lists', //render the ejs file in your views directory
                     {
                         //     here i give the object with the varaible
                         list: lists.data,
-                        users: usersUrl.data
+                        users: usersUrl.data,
                     });
             } else {
                 // if not found
