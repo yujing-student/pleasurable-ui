@@ -30,49 +30,7 @@
     <li class="house_details_li__price_house">€<%= new Intl.NumberFormat("de-DE").format(house.price) %></li>
 
 </ul>
-<h1>aanpassen van de data</h1>
-<form method="POST" action="/test/<%= house.id %>" class="databse">
 
-    <label for="algemeen" class="form_inputfields__label-inputfield"><span>algemeen:</span>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <!-- Outer path for star outline -->
-            <path fill="none" stroke="var(--ci-primary-color, currentColor)" stroke-width="32"
-                  d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Z"/>
-            <!-- Inner path for star fill -->
-            <path fill="var(--ci-secondary-color, currentColor)"
-                  d="M461.469,217.37,367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <!-- Outer path for star outline -->
-            <path fill="none" stroke="var(--ci-primary-color, currentColor)" stroke-width="32"
-                  d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Z"/>
-            <!-- Inner path for star fill -->
-            <path fill="var(--ci-secondary-color, currentColor)"
-                  d="M461.469,217.37,367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"/>
-        </svg>
-        <input type="radio" id="algemeen" name="algemeenNumber" value=""
-               placeholder="">
-    </label>
-    <label for="keuken" class="form_inputfields__label-inputfield"><span>keuken:</span>
-        <input type="radio" id="keuken" name="keukenNumber" value="" placeholder="0" >
-    </label>
-    <label for="Badkamer" class="form_inputfields__label-inputfield"><span>Badkamer:</span>
-        <input type="radio" id="Badkamer" name="badkamerNumber" value=""
-               placeholder="0">
-    </label>
-    <label for="tuin" class="form_inputfields__label-inputfield"><span>tuin:</span>
-        <input type="radio" id="tuin" name="tuinNumber" value="" placeholder="0 " >
-    </label>
-    <label for="new" class="form_inputfields__label-inputfield"><span>geeef een neiwue naam op:</span>
-        <input type="text" id="tuin" name="new" value="" placeholder=" " >
-    </label>
-    <label for="new_score" class="form_inputfields__label-inputfield"><span>:</span>
-        <input type="radio" id="tuin" name="new_score" value="" placeholder="0" >
-    </label>
-    <button type="submit" class="section-give_notese__buton">Opslaan</button>
-    <!--                <div class="loader hide_loader"></div>-->
-
-</form>
 <h2>numbers invoeren van 0 tot en met 5</h2>
 <form method="POST" action="/test/<%= house.id %>" class="score_field_numbers__form_inputfields">
     <input class="input_numbers" type="hidden" value="<%= house.id %>" name="actie" required>
@@ -111,6 +69,7 @@
     </ul>
 
 </div>
+
 <section class="section-give_notes">
     <h2 class="">Notities</h2>
     <p>Hier kunt u een notitie achterlaten.</p>

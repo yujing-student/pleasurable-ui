@@ -7,21 +7,22 @@ import fetchJson from './helpers/fetch-json.js'
 // variable voor de index route
 const huizenHome = await fetchJson('https://fdnd-agency.directus.app/items/f_houses')
 const feedback = await fetchJson('https://fdnd-agency.directus.app/items/f_feedback')
-const users = await fetchJson(`https://fdnd-agency.directus.app/items/f_users/?fields=*.*.`)
+
 const gelukt = 'uw score is toegevoegd';
+
 // this is neccessary for getting the users images
-const users_image = users.data.map(avatar => {
-    console.log(avatar.avatar.id);
-    return {
-        id_avatar: avatar.avatar.id,
-        width: avatar.avatar.width,
-        height: avatar.avatar.height,
-        name: avatar.name
-
-    };
-});
-
-
+const users = await fetchJson(`https://fdnd-agency.directus.app/items/f_users/?fields=*.*.*`)
+console.log(JSON.stringify(users.data.id_avatar))
+// const users_image = users.data.map(avatar => {
+//     console.log(avatar.avatar.id);
+//     return {
+//         id_avatar: avatar.avatar.id,
+//         width: avatar.avatar.width,
+//         height: avatar.avatar.height,
+//         name: avatar.name
+//
+//     };
+// });
 
 // hier maak ik een nieuwe express app aan
 const app = express()
@@ -37,29 +38,22 @@ app.use(express.static('public'))
 // Zorg dat werken met request data makkelijker wordt
 app.use(express.urlencoded({extended: true}))
 
-// 
+//
+const apiUrl = 'https://fdnd-agency.directus.app/items/'
 let ratings = ''
 
 // Get Route voor de index
 app.get('/', async function (request, response) {
 
     const lists = await fetchJson(`https://fdnd-agency.directus.app/items/f_list/${request.params.id}?fields=*.*.*.*`)
-    // const houses = lists.data.map(house => {
-    //     console.log(house.f_list_id.description);
-    //     return {
-    //         id_avatar: avatar.avatar.id,
-    //         width: avatar.avatar.width,
-    //         height: avatar.avatar.height,
-    //         name: avatar.name
-    //
-    //     };
-    // });
-    console.log(JSON.stringify(lists))
+
+    // users.data["0"].avatar
+    console.log(JSON.stringify(users.data))
     response.render('index', {
         alleHuizen: huizenHome.data,
         alleRatings: feedback.data,
         ratings: ratings,
-        users: users_image,
+        data: users.data,
 
 
     });
@@ -67,7 +61,14 @@ app.get('/', async function (request, response) {
     // console.log(feedback.data);
     console.log(ratings);
 })
-
+// app.get('/notes', function (request, response) {
+//     Promise.all([
+//         fetchJson('https://fdnd-agency.directus.app/items/f_users/'),
+//         fetchJson('https://fdnd-agency.directus.app/items/f_list/')
+//     ]).then(([userData, listData]) => {
+//         response.render('notes', {data: userData.data, lists: listData.data});
+//     });
+// });
 app.post('/', function (request, response) { 
   ratings = request.body.star
   console.log(request.body)
@@ -130,7 +131,6 @@ app.get('/test/:id', function (request, response) {
                 house: feedback[1].data,
                 feedback: feedback[0],
                 rating: feedback[0].data[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan
-                users_image: users_image,
                 notities: feedback[0].data[2].note,
                 succed:gelukt,
             });
@@ -168,9 +168,6 @@ app.post('/test/:id', async function (request, response) {
                 response.render('partials/showScore', {
                         result: apiResponse,
                     succed:gelukt,
-
-
-
                         //     todo hier nog een repsonse.bdy met tekst 'uw huis is tegevoegd'
                     }
                 )
@@ -187,7 +184,42 @@ app.post('/test/:id', async function (request, response) {
         });
 })
 
-    
+app.get('/radio/:id', function (request, response) {
+    // fetch data directus table f_feedback
+    fetchJson(apiUrl + 'f_feedback').then((BeoordelingData) => {
+        // console.log(BeoordelingData)
+
+        response.render('radio', {
+            alleHuizen: huizenHome.data,
+            alleRatings: feedback.data,
+            ratings: ratings,
+        })
+        // console.log(ratings)
+    })
+})
+
+app.post('/radio/:id', function (request, response) {
+    console.log(request.body)
+
+    // posten naar directus..
+    fetch(`${apiUrl}f_feedback/`, {
+        method: 'POST',
+        body: JSON.stringify({
+            house: request.body.id,
+            list: 12,
+            user: 7,
+            rating: {
+                stars: request.body.stars,
+            },
+        }),
+        headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+        },
+    }).then((postResponse) => {
+        console.log(postResponse)
+        response.redirect(303, '/radio/'+request.params.id);
+    })
+})
 
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8001)

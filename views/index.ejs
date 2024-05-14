@@ -11,36 +11,16 @@
         
         <div class="container">
 
+            <% data.forEach( user => {%>
+                <ul>
+                    <li><%= user.name %></li>
+                    <li>
+                        <picture>
 
-            <section class="">
-                <h1 class="title_page">Gebruikers</h1>
-                <p class="hr_bottom_p">Klik op je icoontje om je eigen lijst of de lijst van een ander te zien.</p>
-
-                <ul class="ul-users_lijst">
-                    <% users.forEach(users => { %>
-                        <li class="users__li_lijst">
-
-                            <picture>
-
-                                <source srcset="https://fdnd-agency.directus.app/assets/<%= users.id_avatar%>?width=600&height=400&fit=cover&format=webp"
-                                        type="image/webp">
-                                <source srcset="https://fdnd-agency.directus.app/assets/<%= users.id_avatar %>?width=600&height=400&fit=cover&format=webp"
-                                        type="image/avif">
-
-                                <img src="https://fdnd-agency.directus.app/assets/<%= users.id_avatar %>?width=600&height=400&fit=cover"
-                                     alt="House Image" width="<%= users.width %>"
-                                     height=" <%= users.height %>" class="users__show_avatars"
-                                >
-                            </picture>
-
-                        </li>
-                    <% }) %>
-
-
+                    </picture>
+                    </li>
                 </ul>
-
-
-            </section>
+            <% }); %>
             <div class="grid-container">
                 <% alleHuizen.forEach((huis, index) => { %>
                     <div class="card-favorites">
