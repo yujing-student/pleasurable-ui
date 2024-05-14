@@ -20,6 +20,9 @@ const users_image = users.data.map(avatar => {
 
     };
 });
+
+
+
 // hier maak ik een nieuwe express app aan
 const app = express()
 
@@ -38,12 +41,25 @@ app.use(express.urlencoded({extended: true}))
 let ratings = ''
 
 // Get Route voor de index
-app.get('/', function (request, response) {
+app.get('/', async function (request, response) {
+
+    // const lists = await fetchJson(`https://fdnd-agency.directus.app/items/f_list/${request.params.id}?fields=*.*.*.*`)
+    // const houses = lists.data.map(house => {
+    //     console.log(house.f_list_id.description);
+    //     return {
+    //         id_avatar: avatar.avatar.id,
+    //         width: avatar.avatar.width,
+    //         height: avatar.avatar.height,
+    //         name: avatar.name
+    //
+    //     };
+    // });
     response.render('index', {
-      alleHuizen: huizenHome.data,
-      alleRatings : feedback.data,
-      ratings: ratings,
-        users:users_image,
+        alleHuizen: huizenHome.data,
+        alleRatings: feedback.data,
+        ratings: ratings,
+        users: users_image,
+
 
     });
     // console.log(huizenHome.data);
@@ -105,6 +121,7 @@ app.get('/test/:id', function (request, response) {
             // console.log(feedback[0].data[0].rating.ligging+'dit is de beoordeling en house is een object met daarin weer keys en values')
             // console.log(feedback[0].data[0].rating.algemeen+'dit is de beoordeling en house is een object met daarin weer keys en values')
             //
+            // feedback.data["42"].rating
             // // feedback["1"].data.id
             // // Render the data with the arrays
             // console.log(JSON.stringify(feedback[0]))

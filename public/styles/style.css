@@ -510,7 +510,7 @@ article {
 }
 /*dit moet op de index komen te staan in de juiste volgorde*/
 .users__show_avatars{
-  width: 200px;
+  width: 100px;
   height: auto;
 }
 
