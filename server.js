@@ -43,7 +43,7 @@ let ratings = ''
 // Get Route voor de index
 app.get('/', async function (request, response) {
 
-    // const lists = await fetchJson(`https://fdnd-agency.directus.app/items/f_list/${request.params.id}?fields=*.*.*.*`)
+    const lists = await fetchJson(`https://fdnd-agency.directus.app/items/f_list/${request.params.id}?fields=*.*.*.*`)
     // const houses = lists.data.map(house => {
     //     console.log(house.f_list_id.description);
     //     return {
@@ -54,6 +54,7 @@ app.get('/', async function (request, response) {
     //
     //     };
     // });
+    console.log(JSON.stringify(lists))
     response.render('index', {
         alleHuizen: huizenHome.data,
         alleRatings: feedback.data,
