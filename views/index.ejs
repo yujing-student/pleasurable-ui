@@ -24,7 +24,7 @@
                              alt="House Image" width="<%= users.width %>"
                              height="<%= users.height %>" class="users__show_avatars">
                     <% } else { %>
-                        <p>er is geen user.avatar</p>
+                        <p>er is geen user avatar</p>
                     <% } %>
                 </li>
 
@@ -32,6 +32,12 @@
 
 
         </ul>
+        <section class="description-section">
+            <h2>Omschrijving</h2>
+            <ul class="description-section__ul">
+                <li><%= list.description %></li>
+            </ul>
+        </section>
             <div class="grid-container">
                 <% alleHuizen.forEach((huis, index) => { %>
                     <div class="card-favorites">

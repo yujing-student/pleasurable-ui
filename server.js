@@ -6,32 +6,16 @@ import fetchJson from './helpers/fetch-json.js'
 
 // variable voor de index route
 const huizenHome = await fetchJson('https://fdnd-agency.directus.app/items/f_houses')
+//todo  we hebben 18 huizen totaal die worden nu allemaal weergegeven en daar gaat iets fout
+
+const lists = await fetchJson(`https://fdnd-agency.directus.app/items/f_list/?fields=*.*.*.*`)
+
 const feedback = await fetchJson('https://fdnd-agency.directus.app/items/f_feedback')
 
 const gelukt = 'uw score is toegevoegd';
 
 // this is neccessary for getting the users images
-const url = await fetchJson(`https://fdnd-agency.directus.app/items/f_users/?fields=*.*`)
-
-// // this is neccessary for getting the users images
-const users_image = url.data.map(avatar => {
-    if (avatar) {
-        return {
-            id_avatar: avatar.avatar?.id,
-            width: avatar.avatar?.width,
-            height: avatar.avatar?.height,
-            name: avatar.name
-        };
-    } else {
-        // Handle missing avatar data or name gracefully
-        console.error("Error processing user:", avatar);
-        return null; // Or any placeholder value
-    }
-});
-
-
-
-
+const usersUrl = await fetchJson(`https://fdnd-agency.directus.app/items/f_users/?fields=*.*`)
 
 // hier maak ik een nieuwe express app aan
 const app = express()
@@ -54,26 +38,18 @@ let ratings = ''
 // Get Route voor de index
 app.get('/', async function (request, response) {
 
-    const test = await fetchJson(`https://fdnd-agency.directus.app/items/f_list/${request.params.id}?fields=*.*.*.*`)
-    const lists = await fetchJson(`https://fdnd-agency.directus.app/items/f_list/?fields=*.*.*.*`)
 
-    console.log(JSON.stringify(url.data[5].avatar.id)+'dit is het user id van de avatar')
-    console.log(JSON.stringify(url.data)+' dit is het user naam van de user')
-    console.log(JSON.stringify(lists.data)+' dit is de lijst')
+    lists.data["5"].description
+
+    // console.log(JSON.stringify(lists.data)+' dit is de lijst')
+    console.log(JSON.stringify(lists.data["5"].description)+' dit is de description van  1 specififke lijst')
     response.render('index', {
         alleHuizen: huizenHome.data,
         alleRatings: feedback.data,
         ratings: ratings,
-        users: url.data,
-
-
-
-
-
+        list: lists.data,
+        users: usersUrl.data,
     });
-    // console.log(huizenHome.data);
-    // console.log(feedback.data);
-    console.log(ratings);
 })
 // app.get('/notes', function (request, response) {
 //     Promise.all([
@@ -243,3 +219,20 @@ app.listen(app.get('port'), function () {
     // Toon een bericht in de console en geef het poortnummer door
     console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+
+// dit word waarschijnlijk niet meer gebruikert
+const users_image = usersUrl.data.map(avatar => {
+    if (avatar) {
+        return {
+            id_avatar: avatar.avatar?.id,
+            width: avatar.avatar?.width,
+            height: avatar.avatar?.height,
+            name: avatar.name
+        };
+    } else {
+        // Handle missing avatar data or name gracefully
+        console.error("Error processing user:", avatar);
+        return null; // Or any placeholder value
+    }
+});
