@@ -304,7 +304,7 @@ body {
     .grid-container {
       display: inline-grid;
       /*hiermee gebruik je autofit zodat er automatisch een colum bij komt als er genoeg ruimte is*/
-      grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+      grid-template-columns: repeat( auto-fit, minmax(287px, 1fr) );
       gap: 2rem;
     }
 
@@ -537,6 +537,7 @@ article {
   background-color: #31cfec;
   padding: 2em;
   margin: 1em;
+  row-gap: 1em;
 /*repeat( auto-fit, minmax(150px, 1fr) )*/
 
 }
@@ -546,8 +547,8 @@ article {
 }
 
 .users__avatars{
-  width: 100px;
-  height: auto;
+  width: 107px;
+  height: 95px;
   grid-row: 1;
   display: grid;
 }

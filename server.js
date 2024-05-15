@@ -46,7 +46,6 @@ app.get('/', async function (request, response) {
     response.render('index', {
         alleHuizen: huizenHome.data,
         alleRatings: feedback.data,
-        ratings: ratings,
         list: lists.data,
         users: usersUrl.data,
     });
@@ -67,14 +66,14 @@ app.post('/', function (request, response) {
 
 
 // http://localhost:8001/lists/7
-app.get('/lists/:id', async function (request, response) {
+app.get('/lijsten/:id', async function (request, response) {
     fetchJson(`https://fdnd-agency.directus.app/items/f_list/${request.params.id}?fields=*.*.*.*`)
         // .then is used after the fetchjosn is succesful
 
         // console.log(JSON.stringify(lists.data.houses["0"].f_houses_id.poster_image.id)+'dit is het ophalen van de image van een huis')
         .then(lists => {
             if (lists.data) {//check if data exist
-                response.render('lists', //render the ejs file in your views directory
+                response.render('lijsten', //render the ejs file in your views directory
                     {
                         //     here i give the object with the varaible
                         list: lists.data,
@@ -108,7 +107,7 @@ app.get('/huis/:id', function (request, response) {
 });
 
 
-app.get('/test/:id', function (request, response) {
+app.get('/score/:id', function (request, response) {
     const feedback = fetchJson(`https://fdnd-agency.directus.app/items/f_feedback/?fields=*.*.*.*`)
 
     const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?fields=`;
@@ -139,7 +138,7 @@ app.get('/test/:id', function (request, response) {
             // // feedback["1"].data.id
             // // Render the data with the arrays
             console.log(JSON.stringify(feedback[0]))
-            response.render('test', {
+            response.render('score', {
                 house: feedback[1].data,
                 feedback: feedback[0],
                 rating: feedback[0].data[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan
@@ -149,7 +148,7 @@ app.get('/test/:id', function (request, response) {
         })
 })
 
-app.post('/test/:id', async function (request, response) {
+app.post('/score/:id', async function (request, response) {
 //this is the empty object
 
     const newScore = {
