@@ -33,7 +33,7 @@ app.use(express.urlencoded({extended: true}))
 
 //
 const apiUrl = 'https://fdnd-agency.directus.app/items/'
-let ratings = ''
+
 
 // Get Route voor de index
 app.get('/', async function (request, response) {

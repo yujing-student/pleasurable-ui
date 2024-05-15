@@ -13,19 +13,19 @@
 
 
 
-        <ul class="ul-users_lijst">
+        <ul class="usersList">
             <% users.forEach(users => { %>
-                <li><%= users.name %></li>
-                <li><%= users.id %></li>
 
-                <li class="users__li_lijst">
+                <li class="users">
                     <% if (users.avatar) { %>
                         <img src="https://fdnd-agency.directus.app/assets/<%= users.avatar.id %>?width=600&height=400&fit=cover"
                              alt="House Image" width="<%= users.width %>"
-                             height="<%= users.height %>" class="users__show_avatars">
+                             height="<%= users.height %>" class="users__avatars">
+
                     <% } else { %>
                         <p>er is geen user avatar</p>
                     <% } %>
+                        <span class="username"><%= users.name %></span>
                 </li>
 
             <% }) %>

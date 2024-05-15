@@ -176,7 +176,14 @@ body {
     input[type="checkbox"], label.hamburger {
       display: none;
     }
-  
+
+/*    usrers tablet */
+  .users{
+    display: grid;
+    /*grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );*/
+    grid-template-columns: auto auto;
+
+  }
 }
 
 /********** DESKTOP **********/
@@ -510,10 +517,39 @@ article {
     padding-bottom: 1em;
   }
 }
-/*dit moet op de index komen te staan in de juiste volgorde*/
-.users__show_avatars{
+/****************************************************************
+                                                                *
+                     yujing toegevoegde code               *
+                                                                *
+*****************************************************************/
+
+
+/*dit moet op de index komen te staan in de juiste volgorde yujing*/
+.usersList{
+  display: grid;
+  grid-template-columns:repeat( auto-fit, minmax(192px, 1fr) ) ;
+  /*background-color: #31cfec;*/
+
+}
+.users{
+  display: grid;
+  justify-content: center;
+  background-color: #31cfec;
+  padding: 2em;
+  margin: 1em;
+/*repeat( auto-fit, minmax(150px, 1fr) )*/
+
+}
+.username{
+  display: grid;
+  grid-row: 2;
+}
+
+.users__avatars{
   width: 100px;
   height: auto;
+  grid-row: 1;
+  display: grid;
 }
 
 .index-favorite-header{
