@@ -522,6 +522,12 @@ article {
   flex-direction: column;
 }
 /*dit is op score test*/
+
+.score_field_numbers__form_inputfields{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 .loader {
   width: 50px;
   aspect-ratio: 1;
@@ -536,3 +542,4 @@ article {
     transform: rotate(1turn)
   }
 }
+

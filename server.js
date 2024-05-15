@@ -196,20 +196,9 @@ app.post('/test/:id', async function (request, response) {
         });
 })
 
-app.get('/radio/:id', function (request, response) {
-    // fetch data directus table f_feedback
-    fetchJson(apiUrl + 'f_feedback').then((BeoordelingData) => {
-        // console.log(BeoordelingData)
 
-        response.render('radio', {
-            alleHuizen: huizenHome.data,
-            alleRatings: feedback.data,
-            ratings: ratings,
-        })
-        // console.log(ratings)
-    })
-})
 
+// dit is voor de sterren raten naar database
 app.post('/radio/:id', function (request, response) {
     console.log(request.body)
 
@@ -229,7 +218,7 @@ app.post('/radio/:id', function (request, response) {
         },
     }).then((postResponse) => {
         console.log(postResponse)
-        response.redirect(303, '/radio/:id');
+            response.redirect(303, '/radio/' + request.params.id)
     })
 })
 
@@ -258,3 +247,18 @@ const users_image = usersUrl.data.map(avatar => {
         return null; // Or any placeholder value
     }
 });
+
+// oud dit word niet meer gebruikt
+app.get('/radio/:id', function (request, response) {
+    // fetch data directus table f_feedback
+    fetchJson(apiUrl + 'f_feedback').then((BeoordelingData) => {
+        // console.log(BeoordelingData)
+
+        response.render('radio', {
+            alleHuizen: huizenHome.data,
+            alleRatings: feedback.data,
+            ratings: ratings,
+        })
+        // console.log(ratings)
+    })
+})
