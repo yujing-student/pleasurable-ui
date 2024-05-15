@@ -144,6 +144,7 @@ app.get('/score/:id', function (request, response) {
                 rating: feedback[0].data[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan
                 notities: feedback[0].data[2].note,
                 succed: gelukt,
+                users: usersUrl.data,
             });
         })
 })

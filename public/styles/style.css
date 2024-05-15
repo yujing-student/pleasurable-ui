@@ -525,6 +525,10 @@ article {
 
 
 /*dit moet op de index komen te staan in de juiste volgorde yujing*/
+
+/*
+dit word hergebruiks users
+*/
 .usersList{
   display: grid;
   grid-template-columns:repeat( auto-fit, minmax(192px, 1fr) ) ;
@@ -552,18 +556,31 @@ article {
   grid-row: 1;
   display: grid;
 }
-
+/*einde herbgerbuiken*/
 .index-favorite-header{
   display: flex;
   text-align: center;
   flex-direction: column;
 }
-/*dit is op score test*/
+/*dit is op score */
+.houseInfo{
+  margin-bottom: 2em;
+}
+.formsRating{
+
+  display: grid;
+  justify-content: center;
+  margin-left: 5em;
+}
 
 .score_field_numbers__form_inputfields{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  display: grid;
+ justify-content: center;
+}
+.form_inputfields__label-inputfield{
+  display: grid;
+
+  /*width: 10em;*/
 }
 .loader {
   width: 50px;
