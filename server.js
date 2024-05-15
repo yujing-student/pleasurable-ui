@@ -138,7 +138,7 @@ app.get('/test/:id', function (request, response) {
             // feedback.data["42"].rating
             // // feedback["1"].data.id
             // // Render the data with the arrays
-            // console.log(JSON.stringify(feedback[0]))
+            console.log(JSON.stringify(feedback[0]))
             response.render('test', {
                 house: feedback[1].data,
                 feedback: feedback[0],
@@ -262,3 +262,9 @@ app.get('/radio/:id', function (request, response) {
         // console.log(ratings)
     })
 })
+
+
+// <!--    <% feedback.forEach(list => { %>-->
+// <!--    <li> <%= list[0].rating.kitchen %></li>-->
+//
+// <!--    <% }) %>-->
