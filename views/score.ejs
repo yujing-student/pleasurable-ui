@@ -154,3 +154,21 @@
     <% }) %>
 
 </ul>
+
+
+<ul class="output_other_users">
+
+
+
+    <% for (const obj of feedback) { %>
+        <li>House ID: <%= obj.house %></li>
+        <% if (obj.rating && obj.rating.kitchen) { %>
+            <li>Kitchen Rating: <%= obj.rating.kitchen %></li>
+        <% } else { %>
+            <li>Kitchen Rating: Not available</li>
+        <% } %>
+        <%- JSON.stringify(obj.rating) %>  <% if (obj.note) { %>
+            <p>Notities: <%= obj.note %></p>
+        <% } %>
+    <% } %>
+</ul>

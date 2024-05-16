@@ -146,6 +146,7 @@ app.post('/score/:id', async function (request, response) {
     };
     const note = {note: request.body.note}
     console.log(JSON.stringify(newScore))
+
 // make the post route
     fetch(`https://fdnd-agency.directus.app/items/f_feedback/?fields=*.*.*.*`, {
         method: 'post',
@@ -160,15 +161,15 @@ app.post('/score/:id', async function (request, response) {
             note: note,
         }),
     })
+
+
         .then(async (apiResponse) => {
 
             // if the enhanced is true do this en the render is the partial
             if (request.body.enhanced) {
                 response.render('partials/showScore', {
                         result: apiResponse,
-                        succed: gelukt,
-                    rating: feedbackdetails[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan maar dit moet dynamisch
-                    notities: feedbackdetails[2].note,
+                        succed: gelukt, //de rating klopt bij het huis maar is nu handmatig gedaan maar dit moet dynamisch
                         //     todo hier nog een repsonse.bdy met tekst 'uw huis is tegevoegd'
                     }
                 )
@@ -333,7 +334,7 @@ app.post('/test/:id', async function (request, response) {
         .then(async (apiResponse) => {
             // if the enhanced is true do this en the render is the partial
             if (request.body.enhanced) {
-                response.render('../partials/showScore', {
+                response.render('oud/test', {
                         result: apiResponse,
                         succed: gelukt,
                         //     todo hier nog een repsonse.bdy met tekst 'uw huis is tegevoegd'
