@@ -254,19 +254,7 @@ app.get('/test/:id', function (request, response) {
 
 
 // Loop through each array within the constant
-            for (const innerArray of feedbackdetails) {
-                if (Array.isArray(innerArray)) {
-                    for (const obj of innerArray) {
-                        let houseId;
-                        if (obj.house !== null) {
-                            houseId = obj.house;
-                        } else {
-                            houseId = "is er niet";
-                        }
-                        console.log("House ID:", houseId);
-                    }
-                }
-            }
+
 
             // todo hier moet een foreach loop komen
             feedbackdetails.forEach(function (house, feedback) {
@@ -292,7 +280,21 @@ app.get('/test/:id', function (request, response) {
             console.log(JSON.stringify(feedback[1].data.city))
 
 
+          for (const innerArray of feedbackdetails) {
+            if (Array.isArray(innerArray)) {
+              for (const obj of innerArray) {
+                let houseId;
+                if (obj.house !== null) {
+                  houseId = obj.house;
+                } else {
+                  houseId = "is er niet";
+                }
+                console.log("House ID:", houseId);
+              }
+            }
+          }
             response.render('oud/test', {
+
                 house: house,
                 feedback: feedbackdetails,
                 rating: feedbackdetails[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan
