@@ -146,6 +146,7 @@ app.post('/score/:id', async function (request, response) {
         new: request.body.new,
     };
     const note = {note: request.body.note}
+    console.log(JSON.stringify(newScore))
 // make the post route
     fetch(`https://fdnd-agency.directus.app/items/f_feedback/?fields=*.*.*.*`, {
         method: 'post',
@@ -164,7 +165,6 @@ app.post('/score/:id', async function (request, response) {
 
             // if the enhanced is true do this en the render is the partial
             if (request.body.enhanced) {
-console.log(JSON.stringify(newScore)+'posten data met enahcne')
                 response.render('partials/showScore', {
                         result: apiResponse,
                         succed: gelukt,
