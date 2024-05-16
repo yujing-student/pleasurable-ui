@@ -126,7 +126,7 @@ app.get('/score/:id', function (request, response) {
             response.render('score', {
                 house: house,
                 feedback: feedbackdetails,
-                ratingYuJing: feedbackdetails[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan maar dit moet dynamisch
+                rating: feedbackdetails[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan maar dit moet dynamisch
                 notities: feedbackdetails[2].note,
                 succed: gelukt,
                 users: usersUrl.data,
@@ -136,7 +136,8 @@ app.get('/score/:id', function (request, response) {
 
 app.post('/score/:id', async function (request, response) {
 //this is the empty object
-
+    const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?fields=`;
+    const houseUrl = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*`;
     const newScore = {
         general: request.body.algemeenNumber,
         kitchen: request.body.keukenNumber,
@@ -160,11 +161,15 @@ app.post('/score/:id', async function (request, response) {
         }),
     })
         .then(async (apiResponse) => {
+
             // if the enhanced is true do this en the render is the partial
             if (request.body.enhanced) {
+console.log(JSON.stringify(newScore)+'posten data met enahcne')
                 response.render('partials/showScore', {
                         result: apiResponse,
                         succed: gelukt,
+                    rating: feedbackdetails[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan maar dit moet dynamisch
+                    notities: feedbackdetails[2].note,
                         //     todo hier nog een repsonse.bdy met tekst 'uw huis is tegevoegd'
                     }
                 )
@@ -215,10 +220,9 @@ app.get('/radio/:id', function (request, response) {
     fetchJson(apiUrl + 'f_feedback').then((BeoordelingData) => {
         // console.log(BeoordelingData)
 
-        response.render('radio', {
+        response.render('oud/radio', {
             alleHuizen: huizenHome.data,
             alleRatings: feedback.data,
-            ratings: ratings,
         })
         // console.log(ratings)
     })

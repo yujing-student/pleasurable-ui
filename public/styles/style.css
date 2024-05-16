@@ -210,10 +210,11 @@ body {
     & hr {
       background-color: var(--web-orange-primary-color);
       margin-bottom: 10px;
-      /*width: 50px;*/
+      width: 94%;
       height: 5px;
       margin-left: 2em;
       margin-right: 2em;
+    /*  dit is de breedte van de hr lijn*/
     }
   /*}*/
   
@@ -383,14 +384,14 @@ input[type="radio"] {
 /*  transition: 0.2s all linear;*/
 /*}*/
 
-label
-{
-  font-size: 1.5em;
-  font-weight: bold;
-  font-family: sans-serif;
-  color: #999;
-  padding: 1em;
-}
+/*label*/
+/*{*/
+/*  font-size: 1.5em;*/
+/*  font-weight: bold;*/
+/*  font-family: sans-serif;*/
+/*  color: #999;*/
+/*  padding: 1em;*/
+/*}*/
 
 /* The adjacent sibling combinator */
 /*  select label that is direct after the checked imput*/
@@ -526,6 +527,13 @@ article {
 
 /*dit moet op de index komen te staan in de juiste volgorde yujing*/
 
+.sectionUsers{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /*display: grid;*/
+  /*justify-content: center;*/
+}
 /*
 dit word hergebruiks users
 */
@@ -533,16 +541,22 @@ dit word hergebruiks users
   display: grid;
   grid-template-columns:repeat( auto-fit, minmax(192px, 1fr) ) ;
   /*background-color: #31cfec;*/
+  justify-items: center;  /* Center items horizontally */
+  align-items: center;
+  grid-column-gap: 3em;
+  padding: 2em;
 
 }
 .users{
   display: grid;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #31cfec;
   padding: 2em;
   margin: 1em;
   row-gap: 1em;
   grid-template-columns: 1fr;
+  height: 181px;
+  grid-template-rows: 6em;
 /*repeat( auto-fit, minmax(150px, 1fr) )*/
 
 }
@@ -570,6 +584,7 @@ dit word hergebruiks users
   flex-direction: column;
 }
 /*dit is op score */
+
 /*image*/
 .house_details_img__image{
   width: 250px;
@@ -577,20 +592,51 @@ dit word hergebruiks users
 }
 .houseInfo{
   margin-bottom: 2em;
+  display: flex;
+ flex-direction: column;
+  align-items: center;
+}
+.orangeLine {
+  background-color: var(--web-orange-primary-color);
+  margin-bottom: 10px;
+  width: 80%;
+  height: 5px;
+  margin-left: 2em;
+  margin-right: 2em;
+  /*  dit is de breedte van de hr lijn*/
 }
 .formsRating{
 
   display: grid;
   justify-content: center;
   margin-left: 5em;
+  grid-template-rows: auto auto auto auto;
+  grid-row-gap: 3em;
+
+  margin-bottom: 2em;
+  padding-right: 5em;
+}
+.formRatingItem {
+  background-color: var(--regent-blue-primary-color);
+  /*width: 30em;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .score_field_numbers__form_inputfields{
   display: grid;
  justify-content: center;
+
+  /*padding-right: 7em;*/
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
 }
 .form_inputfields__label-inputfield{
   display: grid;
+  grid-template-columns: 6em 8em;
+  padding-left: 2em;
+  padding-bottom: 0.5em;
 
   /*width: 10em;*/
 }
@@ -610,6 +656,29 @@ dit word hergebruiks users
 }
 
 
+/*usrs score*/
+.usersScore{
+  display: grid;
+  justify-content: flex-start;
+  background-color: var(--regent-blue-primary-color);
+  padding: 2em;
+  margin: 1em;
+  row-gap: 1em;
 
+  grid-template-columns: 1fr;
+  grid-template-rows: 6em;
+  /*repeat( auto-fit, minmax(150px, 1fr) )*/
 
+}
 
+@media (min-width: 40em) {
+  .formsRating{
+   /*grid-template-columns: repeat( auto-fit, minmax(319px, 1fr) ) ;*/
+    grid-template-columns: auto auto;
+    grid-column-gap: 3em;
+  }
+  .formRatingItem{
+    max-width: 30em;
+  }
+
+}
