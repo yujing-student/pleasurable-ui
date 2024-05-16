@@ -2,21 +2,43 @@
 <%- include('./partials/navigation') %>
 
 <body>
-    <main>  
-        <header>
+    <main class="container">
+        <header class="index-favorite-header">
+            <h1>dit is de branche met ejs van yujing</h1>
             <h1>Favorieten</h1>
+
             <hr>
             <p>In dit overzicht vind je al jouw favoriete huizen terug.</p>
         </header>
-        
-        <div class="container">
+
+
+
+        <ul class="usersList">
+            <% users.forEach(users => { %>
+
+                <li class="users">
+                    <% if (users.avatar) { %>
+                        <img src="https://fdnd-agency.directus.app/assets/<%= users.avatar.id %>?width=600&height=400&fit=cover"
+                             alt="House Image" width="<%= users.width %>"
+                             height="<%= users.height %>" class="users__avatars">
+
+                    <% } else { %>
+                        <p>er is geen user avatar</p>
+                    <% } %>
+                        <span class="username"><%= users.name %></span>
+                </li>
+
+            <% }) %>
+
+
+        </ul>
             <div class="grid-container">
                 <% alleHuizen.forEach((huis, index) => { %>
                     <div class="card-favorites">
                         <picture>
                             <source srcset="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>?format=webp" type="image/webp">
                             <source srcset="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>?format=avif" type="image/avif">
-                            <img src="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>" alt="foto huis" width="400" height="400"  class="house-card">
+                            <img src="https://fdnd-agency.directus.app/assets/<%= huis.poster_image %>" alt="foto huis" width="200" height="100"  class="house-card">
                         </picture>  
 
                         <article>
@@ -38,7 +60,7 @@
                     </div>
                 <% }) %>
             </div>
-        </div> 
+
     </main>
 </body>
 

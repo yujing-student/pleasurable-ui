@@ -16,7 +16,9 @@
   margin: 0;
   padding: 0;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Proxima Nova", sans-serif;
@@ -32,7 +34,7 @@ body {
 *****************************************************************/
 
 /*********** mobile ***********/
-@media (min-width: 20rem) {
+/*@media (min-width: 20rem) {*/
   .logo {
     width: 4.5em;
   }
@@ -73,9 +75,9 @@ body {
     left: 20px;
     font-size: 16px;
   }
-
+  /*waarom stond deze ul op display none? dat is niet handig vanwege de beoordelingpagina*/
   ul {
-    display: none;
+    /*display: none;*/
     padding: 0.5em;
   }
 
@@ -101,7 +103,7 @@ body {
   .nav-icons a > svg {
     display: none;
   }
-}
+/*}*/
 
 /********** tablet  **********/
 @media (min-width: 45rem) {
@@ -176,7 +178,14 @@ body {
     input[type="checkbox"], label.hamburger {
       display: none;
     }
-  
+
+/*    usrers tablet */
+  .users{
+    display: grid;
+    /*grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );*/
+    grid-template-columns: auto auto;
+
+  }
 }
 
 /********** DESKTOP **********/
@@ -192,7 +201,7 @@ body {
                           Index.EJS Cards                       *                        
                                                                 *
 *****************************************************************/
-@media (min-width: 20rem) {
+/*@media (min-width: 20rem) {*/
   main {
     margin: 16px;
   
@@ -203,10 +212,13 @@ body {
     & hr {
       background-color: var(--web-orange-primary-color);
       margin-bottom: 10px;
-      width: 50px;
+      width: 94%;
       height: 5px;
+      margin-left: 2em;
+      margin-right: 2em;
+    /*  dit is de breedte van de hr lijn*/
     }
-  }
+  /*}*/
   
   
   .container {
@@ -217,11 +229,11 @@ body {
     justify-content: center;
     text-align: center;
   }
-    
-    .grid-container {
-      display: flex;
-      flex-direction: column;
-    }
+    /*weghalen vanwege de grid kaartjes*/
+    /*.grid-container {*/
+    /*  display: flex;*/
+    /*  flex-direction: column;*/
+    /*}*/
   
     .house-card {
       width: 100%;
@@ -246,11 +258,12 @@ body {
       padding: 0;
       font-size: 0.8em;
     }
-  
-    & img {
-      border-radius: 5px 5px 0 0;
-      object-fit: fill;
-    }
+
+    /*dit heeft invloed op alle images en dat is niet altijd handig*/
+    /*& img {*/
+    /*  border-radius: 5px 5px 0 0;*/
+    /*  object-fit: fill;*/
+    /*}*/
   
     &  ul > a {
       text-decoration: none;
@@ -314,38 +327,44 @@ body {
 
     .grid-container {
       display: inline-grid;
-      grid-template-columns: repeat(2, 1fr);
+      /*hiermee gebruik je autofit zodat er automatisch een colum bij komt als er genoeg ruimte is*/
+      grid-template-columns: repeat( auto-fit, minmax(287px, 1fr) );
       gap: 2rem;
     }
 
     .card-favorites {
       /* position: relative; */
       border: solid 0.1em black;
-      height: 450px;
-      width: 300px;
+      /*hiermee is de sterren uit de kaart op index*/
+      /*height: 450px;*/
+      /*width: 300px;*/
       background-color: var(--white-primary-color);
       border-radius: 16px;
     }
 
     img {
-      width: 50%;
+      /*dit krijg je nu op alle images*/
+      /*width: 50%;*/
+
     }
   
 }
 
 /* DESKTOP */
 @media (min-width: 55rem) {
-  .grid-container {
-    display: inline-grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-  }
+  /*dit is onnodig*/
+  /*.grid-container {*/
+  /*  display: inline-grid;*/
+  /*  grid-template-columns: repeat(3, 1fr);*/
+  /*  justify-content: center;*/
+  /*}*/
 
   .card-favorites {
     /* position: relative; */
     border: solid 0.1em black;
-    height: 550px;
-    width: 500px;
+    /*hiermee is de sterren uit de kaart op index*/
+    /*height: 550px;*/
+    /*width: 500px;*/
     background-color: var(--white-primary-color);
     border-radius: 16px;
   }
@@ -362,26 +381,40 @@ form {
 input[type="radio"] {
   display: none;
 }
-input 
-{
-  appearance: none;
-  border-radius: 50%;
-  width: 2em;
+/*dit is vanege de testscore pagina*/
+.input_numbers{
+  /*appearance: none;*/
+  /*border-radius: 50%;*/
+  /*width: 2em;*/
   height: 2em;
-  border: 3px solid #999;
+  /*border: 3px solid #999;*/
   margin-left: 1em;
   position: relative;
   top: 5px;
   transition: 0.2s all linear;
 }
-label
-{
-  font-size: 1.5em;
-  font-weight: bold;
-  font-family: sans-serif;
-  color: #999;
-  padding: 1em;
-}
+/*dit staat uitgecomment vanwege de nummers die ik wil invoeren op de beoordleingpagina*/
+/*input */
+/*{*/
+/*  appearance: none;*/
+/*  border-radius: 50%;*/
+/*  width: 2em;*/
+/*  height: 2em;*/
+/*  border: 3px solid #999;*/
+/*  margin-left: 1em;*/
+/*  position: relative;*/
+/*  top: 5px;*/
+/*  transition: 0.2s all linear;*/
+/*}*/
+
+/*label*/
+/*{*/
+/*  font-size: 1.5em;*/
+/*  font-weight: bold;*/
+/*  font-family: sans-serif;*/
+/*  color: #999;*/
+/*  padding: 1em;*/
+/*}*/
 
 /* The adjacent sibling combinator */
 /*  select label that is direct after the checked imput*/
@@ -396,7 +429,7 @@ input+label:not(input:checked ~ label)
 input:checked,
 input:not(input:checked ~ input)
 {
-  color: gold;
+  /*color: gold;*/
 }
 
 input:hover,
@@ -508,7 +541,168 @@ article {
     padding-bottom: 1em;
   }
 }
+/****************************************************************
+                                                                *
+                     yujing toegevoegde code               *
+                                                                *
+*****************************************************************/
 
 
+/*dit moet op de index komen te staan in de juiste volgorde yujing*/
+
+.sectionUsers{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /*display: grid;*/
+  /*justify-content: center;*/
+}
+/*
+dit word hergebruiks users
+*/
+.usersList{
+  display: grid;
+  grid-template-columns:repeat( auto-fit, minmax(192px, 1fr) ) ;
+  /*background-color: #31cfec;*/
+  justify-items: center;  /* Center items horizontally */
+  align-items: center;
+  grid-column-gap: 3em;
+  padding: 2em;
+
+}
+.users{
+  display: grid;
+  justify-content: flex-start;
+  background-color: #31cfec;
+  padding: 2em;
+  margin: 1em;
+  row-gap: 1em;
+  grid-template-columns: 1fr;
+  height: 181px;
+  grid-template-rows: 6em;
+/*repeat( auto-fit, minmax(150px, 1fr) )*/
+
+}
+.username{
+  display: grid;
+  grid-row: 2;
+}
+
+.users__avatars{
+  width: 133px;
+  height: 95px;
+  grid-row: 1;
+  display: grid;
+}
+.score_div{
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+}
+
+/*einde herbgerbuiken*/
+
+.index-favorite-header{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+/*dit is op score */
+
+/*image*/
+.house_details_img__image{
+  width: 250px;
+  height: auto;
+}
+.houseInfo{
+  margin-bottom: 2em;
+  display: flex;
+ flex-direction: column;
+  align-items: center;
+}
+.orangeLine {
+  background-color: var(--web-orange-primary-color);
+  margin-bottom: 10px;
+  width: 80%;
+  height: 5px;
+  margin-left: 2em;
+  margin-right: 2em;
+  /*  dit is de breedte van de hr lijn*/
+}
+.formsRating{
+
+  display: grid;
+  justify-content: center;
+  margin-left: 5em;
+  grid-template-rows: auto auto auto auto;
+  grid-row-gap: 3em;
+
+  margin-bottom: 2em;
+  padding-right: 5em;
+}
+.formRatingItem {
+  background-color: var(--regent-blue-primary-color);
+  /*width: 30em;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score_field_numbers__form_inputfields{
+  display: grid;
+ justify-content: center;
+
+  /*padding-right: 7em;*/
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+.form_inputfields__label-inputfield{
+  display: grid;
+  grid-template-columns: 6em 8em;
+  padding-left: 2em;
+  padding-bottom: 0.5em;
+
+  /*width: 10em;*/
+}
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid lightblue;
+  border-right-color: orange;
+  animation: l2 1s infinite linear;
+}
+
+@keyframes l2 {
+  to {
+    transform: rotate(1turn)
+  }
+}
 
 
+/*usrs score*/
+.usersScore{
+  display: grid;
+  justify-content: flex-start;
+  background-color: var(--regent-blue-primary-color);
+  padding: 2em;
+  margin: 1em;
+  row-gap: 1em;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: 6em;
+  /*repeat( auto-fit, minmax(150px, 1fr) )*/
+
+}
+
+@media (min-width: 45em) {
+  .formsRating{
+   /*grid-template-columns: repeat( auto-fit, minmax(319px, 1fr) ) ;*/
+    grid-template-columns: auto auto;
+    grid-column-gap: 3em;
+  }
+  .formRatingItem{
+    max-width: 30em;
+    width: 19em;
+  }
+
+}
