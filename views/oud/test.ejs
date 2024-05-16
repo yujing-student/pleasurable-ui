@@ -1,19 +1,18 @@
-<%- include('./partials/head') %>
-<%- include('./partials/navigation') %>
 
 
 
+<h1>testpagina</h1>
 <section class="houseInfo">
     <ul class="ul_house_details">
         <% if (house.poster_image) { %>
         <li>
             <picture>
-                <source srcset="https://fdnd-agency.directus.app/assets/<%= house.poster_image.id %>?width=200&height=200&fit=cover&format=webp"
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= house.poster_image.id %>?width=600&height=400&fit=cover&format=webp"
                         type="image/webp">
-                <source srcset="https://fdnd-agency.directus.app/assets/<%= house.poster_image.id %>?width=200&height=200&fit=cover&format=avif"
+                <source srcset="https://fdnd-agency.directus.app/assets/<%= house.poster_image.id %>?width=600&height=400&fit=cover&format=avif"
                         type="image/avif"
                 >
-                <img src="https://fdnd-agency.directus.app/assets/<%= house.poster_image.id %>?width=200&height=200&fit=cover"
+                <img src="https://fdnd-agency.directus.app/assets/<%= house.poster_image.id %>?width=600&height=400&fit=cover"
                      width="<%= house.poster_image.width %>"
                      height="<%= house.poster_image.height %>"
                      class="house_details_img__image"
@@ -32,7 +31,7 @@
 
 
 <h2>numbers invoeren van 0 tot en met 5</h2>
-<form method="POST" action="/score/<%= house.id %>" class="score_field_numbers__form_inputfields">
+<form method="POST" action="/test/<%= house.id %>" class="score_field_numbers__form_inputfields">
 
     <!--                inputfields niet aanpassen vanwege de client side javascript-->
 
@@ -72,7 +71,7 @@
 <div class=" div_show_score_house__output_number">
     <!--             this ul must be here becuase it has other css than the ul of the partial-->
     <ul class="show_user_score__ul">
-        <%- include('partials/showScore', {result: house}); -%>
+
     </ul>
 
 </div>
@@ -97,16 +96,23 @@
 </ul>
 
 <h2>notitie</h2>
-<%- include('partials/showNotes', {result: house}); -%>
-<p><%= notities %></p>
+
+
 
 <h2>Ratings:</h2>
-    <li>keuken:<%= rating.keuken %></li>
-    <li>badkamer:<%= rating.badkmaer %></li>
-    <li>algemeneem:<%= rating.algemeen %></li>
-    <li>tuin:<%= rating.tuin %></li>
-
+<ul class="score">
+    <% for (const key in feedback) { %>
+        <li>
+            <%= key %>: <%= rating[key] %>
+        </li>
+    <% } %>
+</ul>
 </section>
+<% feedback.forEach(list => { %>
+    <li>
+    <%= list %></li>
+   <% }) %>
+
 <section>
 
 
@@ -124,19 +130,9 @@
                     <p>er is geen user avatar</p>
                 <% } %>
                 <span class="username"><%= users.name %></span>
-                    <div class="score_div">
-                        <span class="score">score</span>
-                        <span>keuken: <%= rating.keuken %></span>
-                        <span>badkamer: <%= rating.badkmaer %></span>
-                        <span>algemeen: <%= rating.algemeen %></span>
-                        <span>tuin: <%= rating.tuin %></span>
-                    </div>
-
             </li>
-
 
         <% }) %>
 
     </ul>
-
 </section>

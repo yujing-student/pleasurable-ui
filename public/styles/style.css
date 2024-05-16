@@ -542,6 +542,7 @@ dit word hergebruiks users
   padding: 2em;
   margin: 1em;
   row-gap: 1em;
+  grid-template-columns: 1fr;
 /*repeat( auto-fit, minmax(150px, 1fr) )*/
 
 }
@@ -551,18 +552,29 @@ dit word hergebruiks users
 }
 
 .users__avatars{
-  width: 107px;
+  width: 133px;
   height: 95px;
   grid-row: 1;
   display: grid;
 }
+.score_div{
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+}
+
 /*einde herbgerbuiken*/
+
 .index-favorite-header{
   display: flex;
   text-align: center;
   flex-direction: column;
 }
 /*dit is op score */
+/*image*/
+.house_details_img__image{
+  width: 250px;
+  height: auto;
+}
 .houseInfo{
   margin-bottom: 2em;
 }
@@ -596,4 +608,8 @@ dit word hergebruiks users
     transform: rotate(1turn)
   }
 }
+
+
+
+
 
