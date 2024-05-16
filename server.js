@@ -59,7 +59,6 @@ app.get('/', async function (request, response) {
 //     });
 // });
 app.post('/', function (request, response) {
-    ratings = request.body.star
     console.log(request.body)
     response.redirect(300, '/')
 })
