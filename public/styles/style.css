@@ -16,7 +16,9 @@
   margin: 0;
   padding: 0;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Proxima Nova", sans-serif;
@@ -671,7 +673,7 @@ dit word hergebruiks users
 
 }
 
-@media (min-width: 40em) {
+@media (min-width: 45em) {
   .formsRating{
    /*grid-template-columns: repeat( auto-fit, minmax(319px, 1fr) ) ;*/
     grid-template-columns: auto auto;
@@ -679,6 +681,7 @@ dit word hergebruiks users
   }
   .formRatingItem{
     max-width: 30em;
+    width: 19em;
   }
 
 }
