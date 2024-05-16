@@ -258,11 +258,11 @@ app.get('/test/:id', function (request, response) {
 
             // todo hier moet een foreach loop komen
             feedbackdetails.forEach(function (house, feedback) {
-                console.log("huis gegevens:", house);
-                console.log("feedback object:", feedback);
+                // console.log("huis gegevens:", house);
+                // console.log("feedback object:", feedback);
 
                 //
-                console.log("feedback user:", feedback); //
+                // console.log("feedback user:", feedback); //
 
 
             });
@@ -270,14 +270,14 @@ app.get('/test/:id', function (request, response) {
             // console.log(JSON.stringify(test) + 'dit is de filter')
             // console.log(JSON.stringify(feedbackdetails.data[0]))
             //
-            console.log(JSON.stringify(feedbackdetails[0].house)+'dit is het huis id')
-            console.log(JSON.stringify(feedbackdetails[0].note)+'dit is de notitie')
-            console.log(JSON.stringify(feedbackdetails[0].rating.ligging))
-            // house
-            console.log(JSON.stringify(feedback[1].data.house_nr))
-            console.log(JSON.stringify(feedback[1].data.id))
-            console.log(JSON.stringify(feedback[1].data.street))
-            console.log(JSON.stringify(feedback[1].data.city))
+            // console.log(JSON.stringify(feedbackdetails[0].house)+'dit is het huis id')
+            // console.log(JSON.stringify(feedbackdetails[0].note)+'dit is de notitie')
+            // console.log(JSON.stringify(feedbackdetails[0].rating.ligging))
+            // // house
+            // console.log(JSON.stringify(feedback[1].data.house_nr))
+            // console.log(JSON.stringify(feedback[1].data.id))
+            // console.log(JSON.stringify(feedback[1].data.street))
+            // console.log(JSON.stringify(feedback[1].data.city))
 
 
           for (const innerArray of feedbackdetails) {
@@ -293,12 +293,11 @@ app.get('/test/:id', function (request, response) {
               }
             }
           }
+            // hier moet nog een check komen dat als huis 30 opgehaald word dat je alleen die gegevens ziet en niet die andere
             response.render('oud/test', {
 
                 house: house,
                 feedback: feedbackdetails,
-                rating: feedbackdetails[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan
-                notities: feedbackdetails[2].note,
                 succed: gelukt,
                 users: usersUrl.data,
             });

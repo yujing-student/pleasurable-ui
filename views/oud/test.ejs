@@ -1,7 +1,7 @@
 
 
 
-<h1>testpagina</h1>
+<h1>testpagina en hier moet de juiste data komen</h1>
 <section class="houseInfo">
     <ul class="ul_house_details">
         <% if (house.poster_image) { %>
@@ -99,47 +99,32 @@
 
 
 
-<h2>Ratings:</h2>
-<ul class="score">
-    <% for (const key in feedback) { %>
-        <li>
-            <%= key %>: <%= rating[key] %>
-        </li>
-    <% } %>
-</ul>
 </section>
 
 
 <section>
 
-<h2>
-    <section>pogign 2
-
-        <% for (const obj of feedback) { %>
-            <h2>House ID: <%= obj.house %></h2>
-            <p>keuken Rating: <%= obj.rating %></p>
-
-            <% if (obj.note) { %>
-                <p>Notities: <%= obj.note %></p>
-            <% } %>
-        <% } %>
-    </section>
+<h2>rating</h2>
 
     <section>
+        <ul>
+
+
         <% for (const obj of feedback) { %>
-            <h2>House ID: <%= obj.house %></h2>
-            <% if (obj.rating && obj.rating.kitchen) { %>  <p>Kitchen Rating: <%= obj.rating.kitchen %></p>
+            <li>House ID: <%= obj.house %></li>
+            <% if (obj.rating && obj.rating.kitchen) { %>
+                    <li>Kitchen Rating: <%= obj.rating.kitchen %></li>
             <% } else { %>
-                <p>Kitchen Rating: Not available</p>
+                <li>Kitchen Rating: Not available</li>
             <% } %>
             <%- JSON.stringify(obj.rating) %>  <% if (obj.note) { %>
                 <p>Notities: <%= obj.note %></p>
             <% } %>
         <% } %>
-
+        </ul>
 
     </section>
-</h2>
+
     <h2>users</h2>
     <ul class="usersList">
         <% users.forEach(users => { %>
