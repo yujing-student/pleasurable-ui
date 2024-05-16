@@ -250,7 +250,24 @@ app.get('/test/:id', function (request, response) {
             const house = feedback[1].data; // dit is het huis die de gebruiker uitgekozen heeft
 
 
-            const targetHouseId = feedback[1].data.house_nr; // Replace with the actual house ID you want to filter for
+            const targetHouseId = feedback[1].data.id;
+
+
+// Loop through each array within the constant
+            for (const innerArray of feedbackdetails) {
+                if (Array.isArray(innerArray)) {
+                    for (const obj of innerArray) {
+                        let houseId;
+                        if (obj.house !== null) {
+                            houseId = obj.house;
+                        } else {
+                            houseId = "is er niet";
+                        }
+                        console.log("House ID:", houseId);
+                    }
+                }
+            }
+
             // todo hier moet een foreach loop komen
             feedbackdetails.forEach(function (house, feedback) {
                 console.log("huis gegevens:", house);
@@ -259,26 +276,22 @@ app.get('/test/:id', function (request, response) {
                 //
                 console.log("feedback user:", feedback); //
 
+
             });
-
-            //
-            // const filteredFeedback = feedbackdetails.filter(feedbackdetails => {
-            //     return feedbackdetails[0].house === targetHouseId;
-            // });
-
-            // console.log(filteredFeedback);
 
             // console.log(JSON.stringify(test) + 'dit is de filter')
             // console.log(JSON.stringify(feedbackdetails.data[0]))
             //
-            // console.log(JSON.stringify(feedbackdetails[0].house))
-            // console.log(JSON.stringify(feedbackdetails[0].note))
-            // console.log(JSON.stringify(feedbackdetails[0].rating.ligging))
-            // // house
-            // console.log(JSON.stringify(feedback[1].data.house_nr))
-            // console.log(JSON.stringify(feedback[1].data.id))
-            // console.log(JSON.stringify(feedback[1].data.street))
-            // console.log(JSON.stringify(feedback[1].data.city))
+            console.log(JSON.stringify(feedbackdetails[0].house)+'dit is het huis id')
+            console.log(JSON.stringify(feedbackdetails[0].note)+'dit is de notitie')
+            console.log(JSON.stringify(feedbackdetails[0].rating.ligging))
+            // house
+            console.log(JSON.stringify(feedback[1].data.house_nr))
+            console.log(JSON.stringify(feedback[1].data.id))
+            console.log(JSON.stringify(feedback[1].data.street))
+            console.log(JSON.stringify(feedback[1].data.city))
+
+
             response.render('oud/test', {
                 house: house,
                 feedback: feedbackdetails,

@@ -108,14 +108,23 @@
     <% } %>
 </ul>
 </section>
-<% feedback.forEach(list => { %>
-    <li>
-    <%= list %></li>
-   <% }) %>
+
 
 <section>
 
+<h2>
+    <section>pogign 2
 
+        <% for (const obj of feedback) { %>
+            <h2>House ID: <%= obj.house %></h2>
+            <p>keuken Rating: <%= obj.rating.keuken %></p>
+
+            <% if (obj.note) { %>
+                <p>Notities: <%= obj.note %></p>
+            <% } %>
+        <% } %>
+    </section>
+</h2>
     <h2>users</h2>
     <ul class="usersList">
         <% users.forEach(users => { %>
