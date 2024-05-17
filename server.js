@@ -32,6 +32,15 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 
 //
+
+// Stel het poortnummer in waar express op moet gaan luisteren
+app.set('port', process.env.PORT || 8001)
+
+// Start express op, haal daarbij het zojuist ingestelde poortnummer op
+app.listen(app.get('port'), function () {
+    // Toon een bericht in de console en geef het poortnummer door
+    console.log(`Application started on http://localhost:${app.get('port')}`)
+})
 const apiUrl = 'https://fdnd-agency.directus.app/items/'
 
 
@@ -187,14 +196,7 @@ app.post('/score/:id', async function (request, response) {
 
 
 
-// Stel het poortnummer in waar express op moet gaan luisteren
-app.set('port', process.env.PORT || 8001)
 
-// Start express op, haal daarbij het zojuist ingestelde poortnummer op
-app.listen(app.get('port'), function () {
-    // Toon een bericht in de console en geef het poortnummer door
-    console.log(`Application started on http://localhost:${app.get('port')}`)
-})
 
 
 // dit word waarschijnlijk niet meer gebruikert
@@ -228,16 +230,18 @@ app.get('/radio/:id', function (request, response) {
 })
 
 
-// <!--    <% feedback.forEach(list => { %>-->
-// <!--    <li> <%= list[0].rating.kitchen %></li>-->
+
 //
-// <!--    <% }) %>-->
 
 // dit word niet meer gebruikt
 
+//
 app.get('/test/:id', function (request, response) {
     const feedback = fetchJson(`https://fdnd-agency.directus.app/items/f_feedback/?fields=*.*.*.*`)
 
+
+
+    
     const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?fields=`;
     const houseUrl = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*`;
 
