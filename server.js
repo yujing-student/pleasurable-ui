@@ -6,7 +6,7 @@ import fetchJson from './helpers/fetch-json.js'
 // variable voor de index route
 const apiUrl = 'https://fdnd-agency.directus.app/items/'
 const huizenHome = await fetchJson(apiUrl + 'f_houses')
-const feedback = await fetchJson(apiUrl + 'f_feedback')
+const feedbackUrl = await fetchJson(apiUrl + 'f_feedback')
 const lists = await fetchJson(apiUrl +`f_list/?fields=*.*.*.*`)
 const usersUrl = await fetchJson(apiUrl+`f_users/?fields=*.*`)
 const gelukt = 'uw score is toegevoegd';
@@ -44,7 +44,7 @@ app.get('/', function (request, response) {
 
         response.render('index', {
             alleHuizen: huizenHome.data,
-            alleRatings: feedback.data,
+            alleRatings: feedbackUrl.data,
             ratings: ratings,
             users: usersUrl.data,
         })
@@ -97,8 +97,6 @@ app.get('/huis/:id', function (request, response) {
 })
 
 app.get('/score/:id', function (request, response) {
-    const feedback = fetchJson(`https://fdnd-agency.directus.app/items/f_feedback/?fields=*.*.*.*`)
-
     const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?fields=`;
     const houseUrl = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*`;
 
@@ -107,15 +105,18 @@ app.get('/score/:id', function (request, response) {
         fetchJson(feedbackUrl),
         fetchJson(houseUrl)
     ])
+        // todo zorgen dat de successtate er is want dynamisch weergeven van data en de enhanced is te moeilijk samen
         .then(async (feedback) => {
             const feedbackdetails = feedback[0].data; // Assuming feedback is directly an array of objects
             const house = feedback[1].data; // Assuming house data is in the second response
+            // Filter feedback based on house ID
+            const filteredFeedback = feedback.filter(item => item.house === house.id);
 
             console.log(JSON.stringify(feedbackdetails[2].rating))
             response.render('score', {
                 house: house,
                 feedback: feedback[0].data,
-                rating: feedbackdetails[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan maar dit moet dynamisch
+                rating: feedbackdetails[73].rating,//de rating klopt bij het huis maar is nu handmatig gedaan maar dit moet dynamisch
                 notities: feedbackdetails[2].note,
                 succed: gelukt,
                 users: usersUrl.data,
@@ -127,6 +128,11 @@ app.post('/score/:id', async function (request, response) {
 //this is the empty object
     const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?fields=`;
     const houseUrl = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*`;
+
+    Promise.all([
+        fetchJson(feedbackUrl),
+        fetchJson(houseUrl)
+    ])
     const newScore = {
         general: request.body.algemeenNumber,
         kitchen: request.body.keukenNumber,
@@ -159,8 +165,9 @@ app.post('/score/:id', async function (request, response) {
             if (request.body.enhanced) {
                 response.render('partials/showScore', {
                         result: apiResponse,
-                        succed: gelukt, //de rating klopt bij het huis maar is nu handmatig gedaan maar dit moet dynamisch
-                        //     todo hier nog een repsonse.bdy met tekst 'uw huis is tegevoegd'
+                        succed: gelukt,
+                    // feedback hier toevoegen lukt niet ant het omzetten gebeurt in de get route
+
                     }
                 )
             }
@@ -171,8 +178,5 @@ app.post('/score/:id', async function (request, response) {
             // }
 
         })
-        .catch(error => {
-            console.error('Error making POST request:', error);
-        });
 })
 

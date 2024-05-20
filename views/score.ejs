@@ -83,10 +83,10 @@
         <section class="formRatingItem">
             <h2>Ratings:</h2>
             <ul>
-                <li>keuken:<%= rating.keuken %></li>
-                <li>badkamer:<%= rating.badkmaer %></li>
-                <li>algemeneem:<%= rating.algemeen %></li>
-                <li>tuin:<%= rating.tuin %></li>
+                <li>keuken:<%= rating.kitchen %></li>
+                <li>badkamer:<%= rating.bathroom %></li>
+                <li>algemeneem:<%= rating.general %></li>
+                <li>tuin:<%= rating.garden %></li>
             </ul>
 
         </section>
@@ -112,10 +112,13 @@
 
 
 
-    <section class=" formRatingItem show_notes">
+    <section class=" formRatingItem ">
         <h2>notitie</h2>
         <%- include('partials/showNotes', {result: house}); -%>
-        <p><%= notities %></p>
+
+    </section>
+    <section class="show_notes">
+
     </section>
 
 
@@ -145,10 +148,10 @@
             <span class="username"><%= users.name %></span>
             <div class="score_div">
                 <span class="score">score</span>
-                <span>keuken: <%= rating.keuken %></span>
-                <span>badkamer: <%= rating.badkmaer %></span>
-                <span>algemeen: <%= rating.algemeen %></span>
-                <span>tuin: <%= rating.tuin %></span>
+                <span>keuken: <%= rating.kitchen %></span>
+                <span>badkamer: <%= rating.bathroom %></span>
+                <span>algemeen: <%= rating.general %></span>
+                <span>tuin: <%= rating.garden %></span>
             </div>
 
         </li>
@@ -285,11 +288,9 @@
             <li>House ID: <%= obj.house %></li>
             <% if (obj.rating && obj.rating.kitchen) { %>
                 <li>Kitchen Rating: <%= obj.rating.kitchen %></li>
+                <li>general Rating: <%= obj.rating.general %></li>
             <% } else { %>
                 <li>Kitchen Rating: Not available</li>
-            <% } %>
-            <%- JSON.stringify(obj.rating) %>  <% if (obj.note) { %>
-                <p>Notities: <%= obj.note %></p>
             <% } %>
         <% } %>
     </ul>
