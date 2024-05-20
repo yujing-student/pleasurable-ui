@@ -5,3 +5,9 @@ npm-debug.log*
 node_modules
 .npm
 .env
+qodana.yaml
+.idea/13-5-2024.iml
+.idea/14-5-2024.iml
+.idea/fileColors.xml
+.idea/modules.xml
+.idea/vcs.xml
