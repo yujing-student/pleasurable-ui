@@ -1,0 +1,230 @@
+/*toegevoegd*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*aangepaast*/
+label.hamburger {
+    font-size: 20px;
+    right: 7px;
+    bottom: 5px;
+}
+
+/*dit stond eerst op display none en nu op zichtbaar*/
+ul {
+    /*display: none;*/
+}
+
+/*toegevoegd*/
+.starRating{
+    color: black;
+
+}
+
+
+/*@media (min-width: 20rem) {*/
+main {
+
+    & hr {
+        width: 94%;
+
+        margin-left: 2em;
+        margin-right: 2em;
+        /*  dit is de breedte van de hr lijn*/
+    }
+}
+
+
+input:checked,
+input:not(input:checked ~ input)
+{
+    /*color: gold;*/
+}
+
+/****************************************************************
+                                                                *
+                     yujing toegevoegde code               *
+                                                                *
+*****************************************************************/
+
+
+/*dit moet op de index komen te staan in de juiste volgorde yujing*/
+
+.sectionUsers{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /*display: grid;*/
+    /*justify-content: center;*/
+}
+
+/*    usrers tablet  toegevoegd*/
+.users{
+    display: grid;
+    /*grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );*/
+    grid-template-columns: auto auto;
+
+}
+/*
+dit word hergebruiks users
+*/
+.usersList{
+    display: grid;
+    grid-template-columns:repeat( auto-fit, minmax(192px, 1fr) ) ;
+    /*background-color: #31cfec;*/
+    justify-items: center;  /* Center items horizontally */
+    align-items: center;
+    grid-column-gap: 3em;
+    padding: 2em;
+
+}
+.users{
+    display: grid;
+    justify-content: flex-start;
+    background-color: var(--regent-blue-primary-color);
+    padding: 2em;
+    margin: 1em;
+    row-gap: 1em;
+    grid-template-columns: 1fr;
+    height: 181px;
+    grid-template-rows: 6em;
+    /*repeat( auto-fit, minmax(150px, 1fr) )*/
+
+}
+.username{
+    display: grid;
+    grid-row: 2;
+}
+
+.users__avatars{
+    width: 133px;
+    height: 95px;
+    grid-row: 1;
+    display: grid;
+}
+.score_div{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+}
+
+/*einde herbgerbuiken*/
+
+/*dit is index*/
+.index-favorite-header{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+/*dit is op score */
+
+/*image*/
+.house_details_img__image{
+    width: 250px;
+    height: auto;
+}
+.houseInfo{
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.orangeLine {
+    background-color: var(--web-orange-primary-color);
+    margin-bottom: 10px;
+    width: 80%;
+    height: 5px;
+    margin-left: 2em;
+    margin-right: 2em;
+    /*  dit is de breedte van de hr lijn*/
+}
+.formsRating{
+
+    display: grid;
+    justify-content: center;
+    margin-left: 5em;
+    grid-template-rows: auto auto auto auto;
+    grid-row-gap: 3em;
+
+    margin-bottom: 2em;
+    padding-right: 5em;
+}
+.formRatingItem {
+    background-color: var(--regent-blue-primary-color);
+    /*width: 30em;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score_field_numbers__form_inputfields{
+    display: grid;
+    justify-content: center;
+
+    /*padding-right: 7em;*/
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+.form_inputfields__label-inputfield{
+    display: grid;
+    /*grid-template-columns: 6em 8em;*/
+    padding-left: 2em;
+    padding-bottom: 0.5em;
+
+    /*width: 10em;*/
+}
+
+.input_numbers{
+
+}
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid lightblue;
+    border-right-color: orange;
+    animation: l2 1s infinite linear;
+}
+
+@keyframes l2 {
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+
+/*usrs score*/
+.usersScore{
+    display: grid;
+    justify-content: flex-start;
+    background-color: var(--regent-blue-primary-color);
+    padding: 2em;
+    margin: 1em;
+    row-gap: 1em;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 6em;
+    /*repeat( auto-fit, minmax(150px, 1fr) )*/
+
+}
+
+@media (min-width: 45em) {
+    .formsRating{
+        /*grid-template-columns: repeat( auto-fit, minmax(319px, 1fr) ) ;*/
+        grid-template-columns: auto auto;
+        grid-column-gap: 3em;
+    }
+    .formRatingItem{
+        max-width: 30em;
+        width: 19em;
+    }
+
+}
+.output_other_users{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 320px;
+}
+.sectionScore{
+    max-width: 320px;
+}
