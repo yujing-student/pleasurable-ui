@@ -286,11 +286,13 @@
     <ul class="sectionScore">
         <% for (const obj of feedback) { %>
             <li>House ID: <%= obj.house %></li>
-            <% if (obj.rating && obj.rating.kitchen) { %>
-                <li>Kitchen Rating: <%= obj.rating.kitchen %></li>
-                <li>general Rating: <%= obj.rating.general %></li>
+            <% if (obj.rating) { %>
+                <li>Kitchen : <%= obj.rating.kitchen %></li>
+                <li>general : <%= obj.rating.general %></li>
+                <li>badkamer: <%= obj.rating.bathroom %></li>
+                <li>tuin: <%= obj.rating.garden %></li>
             <% } else { %>
-                <li>Kitchen Rating: Not available</li>
+                <p>er is geens core ingevoerd</p>
             <% } %>
         <% } %>
     </ul>
