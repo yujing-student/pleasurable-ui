@@ -225,6 +225,15 @@ dit word hergebruiks users
     align-items: center;
     max-width: 320px;
 }
+.savebutton{
+    background-color: var(--lochmara-primary-color);
+    color: white;
+    padding: 11px;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+}
 .sectionScore{
     max-width: 320px;
 }
