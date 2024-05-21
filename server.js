@@ -113,17 +113,17 @@ app.get('/score/:id', function (request, response) {
             // const filteredFeedback = feedback.filter(item => item.house === house.id);
 
 
-          for (const obj of feedbackdetails.data) {
-              for (const data of feedbackdetails.data) {
-                  if (data.data.rating) {
-                      data.rating.kitchen
-                      data.rating.general
-                      data.rating.bathroom
-                      data.rating.garden
-                  }
-              }
-
-          }
+          // for (const obj of feedbackdetails.data) {
+          //     for (const data of feedbackdetails.data) {
+          //         if (data.data.rating) {
+          //             data.rating.kitchen
+          //             data.rating.general
+          //             data.rating.bathroom
+          //             data.rating.garden
+          //         }
+          //     }
+          //
+          // }
 
 
 
@@ -141,7 +141,7 @@ app.get('/score/:id', function (request, response) {
         })
 })
 
-app.post('/score/:id', async function (request, response) {
+app.post('/score/:id',  function (request, response) {
 //this is the empty object
     const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?fields=`;
     const houseUrl = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*`;
@@ -184,7 +184,6 @@ app.post('/score/:id', async function (request, response) {
                         result: apiResponse,
                         succed: gelukt,
                     note: noteUser,
-                    notities: feedbackdetails[2].note,
                     // feedback hier toevoegen lukt niet ant het omzetten gebeurt in de get route
 
                     }
@@ -198,43 +197,5 @@ app.post('/score/:id', async function (request, response) {
 
         })
 
-
-
-
-    fetch(`https://fdnd-agency.directus.app/items/f_feedback/?fields=*.*.*.*`, {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json', // Set appropriate header
-        },
-        body: JSON.stringify({
-            "house": request.params.id,
-            "list": 7,
-            "user": 5,
-            rating: newScore,
-            note: noteUser,
-        }),
-    })
-
-
-        .then(async (apiResponse) => {
-
-            // if the enhanced is true do this en the render is the partial
-            if (request.body.enhanced) {
-                response.render('partials/ShowNotes', {
-                        result: apiResponse,
-                        note: noteUser,
-                        notities: feedbackdetails[2].note,
-                        // feedback hier toevoegen lukt niet ant het omzetten gebeurt in de get route
-
-                    }
-                )
-            }
-            // the else is commented because if it is not working the full page is show in the beoordeling
-
-            // else {
-            //     response.redirect(303, '/score/' + request.params.id)
-            // }
-
-        })
 })
 

@@ -32,10 +32,7 @@
 
 // user parameters for the forms that the code is dry
 // using this is neccessary because the 2 forms must have the exact same function
-FormsEnhanced('.scorefield',
-    '.showscore',
-    'enhanced',
-    '.loading-state');
+FormsEnhanced('.scorefield', '.showscore','enhanced', '.loading-state');
 FormsEnhanced('.notesForm', '.show_notes', 'notesEnhanced', '.loading-state');
 
 // here i define that this is the laoding state
