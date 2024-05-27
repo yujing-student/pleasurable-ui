@@ -1,22 +1,18 @@
 // Importeerd npm pakket express uit de node_modules map
 import express from 'express'
-
 // Importeerd de zelfgemaakte functie fetchJson uit de ./helpers map
 import fetchJson from './helpers/fetch-json.js'
 
 // variable voor de index route
-const huizenHome = await fetchJson('https://fdnd-agency.directus.app/items/f_houses')
-//todo  we hebben 18 huizen totaal die worden nu allemaal weergegeven en daar gaat iets fout
-
-const lists = await fetchJson(`https://fdnd-agency.directus.app/items/f_list/?fields=*.*.*.*`)
-
-const feedback = await fetchJson('https://fdnd-agency.directus.app/items/f_feedback')
-
+const apiUrl = 'https://fdnd-agency.directus.app/items/'
+const huizenHome = await fetchJson(apiUrl + 'f_houses')
+const feedbackUrl = await fetchJson(apiUrl + 'f_feedback')
+const lists = await fetchJson(apiUrl + `f_list/?fields=*.*.*.*`)
+const usersUrl = await fetchJson(apiUrl + `f_users/?fields=*.*`)
 const gelukt = 'uw score is toegevoegd';
-
-// this is neccessary for getting the users images
-const usersUrl = await fetchJson(`https://fdnd-agency.directus.app/items/f_users/?fields=*.*`)
-
+//
+// let ratings = ''
+let ratings = []
 // hier maak ik een nieuwe express app aan
 const app = express()
 
@@ -31,165 +27,9 @@ app.use(express.static('public'))
 // Zorg dat werken met request data makkelijker wordt
 app.use(express.urlencoded({extended: true}))
 
-//
-const apiUrl = 'https://fdnd-agency.directus.app/items/'
-
-
-// Get Route voor de index
-app.get('/', async function (request, response) {
-
-
-    lists.data["5"].description
-
-    // console.log(JSON.stringify(lists.data)+' dit is de lijst')
-    console.log(JSON.stringify(lists.data["5"].description) + ' dit is de description van  1 specififke lijst')
-    response.render('index', {
-        alleHuizen: huizenHome.data,
-        alleRatings: feedback.data,
-        list: lists.data,
-        users: usersUrl.data,
-    });
-})
-// app.get('/notes', function (request, response) {
-//     Promise.all([
-//         fetchJson('https://fdnd-agency.directus.app/items/f_users/'),
-//         fetchJson('https://fdnd-agency.directus.app/items/f_list/')
-//     ]).then(([userData, listData]) => {
-//         response.render('notes', {data: userData.data, lists: listData.data});
-//     });
-// });
-app.post('/', function (request, response) {
-    console.log(request.body)
-    response.redirect(300, '/')
-})
-
-
-// http://localhost:8001/lists/7
-app.get('/lijsten/:id', async function (request, response) {
-    fetchJson(`https://fdnd-agency.directus.app/items/f_list/${request.params.id}?fields=*.*.*.*`)
-        // .then is used after the fetchjosn is succesful
-
-        // console.log(JSON.stringify(lists.data.houses["0"].f_houses_id.poster_image.id)+'dit is het ophalen van de image van een huis')
-        .then(lists => {
-            if (lists.data) {//check if data exist
-                response.render('lijsten', //render the ejs file in your views directory
-                    {
-                        //     here i give the object with the varaible
-                        list: lists.data,
-                        users: usersUrl.data,
-                    });
-            } else {
-                // if not found
-                console.error('No list data found');
-
-            }
-        })
-});
-
-app.get('/huis/:id', function (request, response) {
-    // request.params.id gebruik je zodat je de exacte huis kan weergeven dit is een routeparmater naar de route van die huis
-    const url = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*.*`
-    fetchJson(url).then((apiData) => {
-        if (apiData.data) {/*als data voer dan dit uit */
-            // console.log('data bestaat u gaat nu naar de Detailpage page'+JSON.stringify(apiData))
-            // info gebruiken om die te linken aan apidata.data
-            response.render('huis', {house: apiData.data});
-            // console.log(apiData)
-        } else {
-            console.log('No data found for house with id: ' + request.params.id);
-            //     laat de error zien als de data al niet gevonden word
-        }
-    })
-        .catch((error) => {
-            console.error('Error fetching house data:', error);
-        });
-});
-
-
-app.get('/score/:id', function (request, response) {
-    const feedback = fetchJson(`https://fdnd-agency.directus.app/items/f_feedback/?fields=*.*.*.*`)
-
-    const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?fields=`;
-    const houseUrl = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*`;
-
-    // use a promise.all because the tables are not connected to each other
-    Promise.all([
-        fetchJson(feedbackUrl),
-        fetchJson(houseUrl)
-    ])
-        .then(async (feedback) => {
-            const feedbackdetails = feedback[0].data; // Assuming feedback is directly an array of objects
-            const house = feedback[1].data; // Assuming house data is in the second response
-
-            console.log(JSON.stringify(feedbackdetails[2].rating))
-            response.render('score', {
-                house: house,
-                feedback: feedbackdetails,
-                rating: feedbackdetails[2].rating,//de rating klopt bij het huis maar is nu handmatig gedaan maar dit moet dynamisch
-                notities: feedbackdetails[2].note,
-                succed: gelukt,
-                users: usersUrl.data,
-            });
-        })
-})
-
-app.post('/score/:id', async function (request, response) {
-//this is the empty object
-    const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?fields=`;
-    const houseUrl = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*`;
-    const newScore = {
-        general: request.body.algemeenNumber,
-        kitchen: request.body.keukenNumber,
-        bathroom: request.body.badkamerNumber,
-        garden: request.body.tuinNumber,
-        new: request.body.new,
-    };
-    const note = {note: request.body.note}
-    console.log(JSON.stringify(newScore))
-
-// make the post route
-    fetch(`https://fdnd-agency.directus.app/items/f_feedback/?fields=*.*.*.*`, {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json', // Set appropriate header
-        },
-        body: JSON.stringify({
-            "house": request.params.id,
-            "list": 7,
-            "user": 5,
-            rating: newScore,
-            note: note,
-        }),
-    })
-
-
-        .then(async (apiResponse) => {
-
-            // if the enhanced is true do this en the render is the partial
-            if (request.body.enhanced) {
-                response.render('partials/showScore', {
-                        result: apiResponse,
-                        succed: gelukt, //de rating klopt bij het huis maar is nu handmatig gedaan maar dit moet dynamisch
-                        //     todo hier nog een repsonse.bdy met tekst 'uw huis is tegevoegd'
-                    }
-                )
-            }
-            // the else is commented because if it is not working the full page is show in the beoordeling
-
-            // else {
-            //     response.redirect(303, '/score/' + request.params.id)
-            // }
-
-        })
-        .catch(error => {
-            console.error('Error making POST request:', error);
-        });
-})
-
-
 
 // Stel het poortnummer in waar express op moet gaan luisteren
-app.set('port', process.env.PORT || 8001)
+app.set('port', process.env.PORT || 8003)
 
 // Start express op, haal daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {
@@ -198,165 +38,19 @@ app.listen(app.get('port'), function () {
 })
 
 
-// dit word waarschijnlijk niet meer gebruikert
-const users_image = usersUrl.data.map(avatar => {
-    if (avatar) {
-        return {
-            id_avatar: avatar.avatar?.id,
-            width: avatar.avatar?.width,
-            height: avatar.avatar?.height,
-            name: avatar.name
-        };
-    } else {
-        // Handle missing avatar data or name gracefully
-        console.error("Error processing user:", avatar);
-        return null; // Or any placeholder value
-    }
-});
 
-// oud dit word niet meer gebruikt
-app.get('/radio/:id', function (request, response) {
-    // fetch data directus table f_feedback
-    fetchJson(apiUrl + 'f_feedback').then((BeoordelingData) => {
-        // console.log(BeoordelingData)
 
-        response.render('oud/radio', {
-            alleHuizen: huizenHome.data,
-            alleRatings: feedback.data,
-        })
-        // console.log(ratings)
+// Get Route voor de index
+app.get('/', function (request, response) {
+
+    response.render('index', {
+        alleHuizen: huizenHome.data,
+        alleRatings: feedbackUrl.data,
+        users: usersUrl.data,
     })
 })
 
-
-// <!--    <% feedback.forEach(list => { %>-->
-// <!--    <li> <%= list[0].rating.kitchen %></li>-->
-//
-// <!--    <% }) %>-->
-
-// dit word niet meer gebruikt
-
-app.get('/test/:id', function (request, response) {
-    const feedback = fetchJson(`https://fdnd-agency.directus.app/items/f_feedback/?fields=*.*.*.*`)
-
-    const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?fields=`;
-    const houseUrl = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*`;
-
-    Promise.all([
-        fetchJson(feedbackUrl),
-        fetchJson(houseUrl)
-    ])
-        .then(async (feedback) => {
-            const feedbackdetails = feedback[0].data; // dit s de beoordeling
-            const house = feedback[1].data; // dit is het huis die de gebruiker uitgekozen heeft
-
-
-            const targetHouseId = feedback[1].data.id;
-
-
-// Loop through each array within the constant
-
-
-            // todo hier moet een foreach loop komen
-            feedbackdetails.forEach(function (house, feedback) {
-                // console.log("huis gegevens:", house);
-                // console.log("feedback object:", feedback);
-
-                //
-                // console.log("feedback user:", feedback); //
-
-
-            });
-
-            // console.log(JSON.stringify(test) + 'dit is de filter')
-            // console.log(JSON.stringify(feedbackdetails.data[0]))
-            //
-            // console.log(JSON.stringify(feedbackdetails[0].house)+'dit is het huis id')
-            // console.log(JSON.stringify(feedbackdetails[0].note)+'dit is de notitie')
-            // console.log(JSON.stringify(feedbackdetails[0].rating.ligging))
-            // // house
-            // console.log(JSON.stringify(feedback[1].data.house_nr))
-            // console.log(JSON.stringify(feedback[1].data.id))
-            // console.log(JSON.stringify(feedback[1].data.street))
-            // console.log(JSON.stringify(feedback[1].data.city))
-
-
-          for (const innerArray of feedbackdetails) {
-            if (Array.isArray(innerArray)) {
-              for (const obj of innerArray) {
-                let houseId;
-                if (obj.house !== null) {
-                  houseId = obj.house;
-                } else {
-                  houseId = "is er niet";
-                }
-                console.log("House ID:", houseId);
-              }
-            }
-          }
-            // hier moet nog een check komen dat als huis 30 opgehaald word dat je alleen die gegevens ziet en niet die andere
-            response.render('oud/test', {
-
-                house: house,
-                feedback: feedbackdetails,
-                succed: gelukt,
-                users: usersUrl.data,
-            });
-        })
-})
-
-
-app.post('/test/:id', async function (request, response) {
-//this is the empty object
-
-    const newScore = {
-        general: request.body.algemeenNumber,
-        kitchen: request.body.keukenNumber,
-        bathroom: request.body.badkamerNumber,
-        garden: request.body.tuinNumber,
-        new: request.body.new,
-    };
-    const note = {note: request.body.note}
-// make the post route
-    fetch(`https://fdnd-agency.directus.app/items/f_feedback/?fields=*.*.*.*`, {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json', // Set appropriate header
-        },
-        body: JSON.stringify({
-            "house": request.params.id,
-            "list": 7,
-            "user": 5,
-            rating: newScore,
-            note: note,
-        }),
-    })
-        .then(async (apiResponse) => {
-            // if the enhanced is true do this en the render is the partial
-            if (request.body.enhanced) {
-                response.render('oud/test', {
-                        result: apiResponse,
-                        succed: gelukt,
-                        //     todo hier nog een repsonse.bdy met tekst 'uw huis is tegevoegd'
-                    }
-                )
-            }
-            // the else is commented because if it is not working the full page is show in the beoordeling
-
-            // else {
-            //     response.redirect(303, '/score/' + request.params.id)
-            // }
-
-        })
-        .catch(error => {
-            console.error('Error making POST request:', error);
-        });
-})
-
-
-// dit is voor de sterren raten naar database
-app.post('/radio/:id', function (request, response) {
-    console.log(request.body)
+app.post('/', function (request, response) {
 
     // posten naar directus..
     fetch(`${apiUrl}f_feedback/`, {
@@ -373,7 +67,168 @@ app.post('/radio/:id', function (request, response) {
             'Content-Type': 'application/json; charset=UTF-8',
         },
     }).then((postResponse) => {
-        console.log(postResponse)
-        response.redirect(303, '/radio/' + request.params.id)
+        // console.log(postResponse)
+        response.redirect(303, '/')
     })
 })
+
+app.get('/huis/:id', function (request, response) {
+    // request.params.id gebruik je zodat je de exacte huis kan weergeven dit is een routeparmater naar de route van die huis
+    const url = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*.*`
+    fetchJson(url)
+        .then((apiData) => {
+            if (apiData.data) {
+                /*als data voer dan dit uit */
+                // console.log('data bestaat u gaat nu naar de Detailpage page'+JSON.stringify(apiData))
+                // info gebruiken om die te linken aan apidata.data
+                response.render('huis', {house: apiData.data})
+                // console.log(apiData)
+            }
+        })
+
+})
+
+app.get('/score/:id', function (request, response) {
+    const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?filter[house][_eq]=${request.params.id}`;
+    // hier moet een
+    const houseUrl = `https://fdnd-agency.directus.app/items/f_houses/${request.params.id}/?fields=*.*`;
+
+    // deze data blijft staan omdat ikk het niet dynamisch krijg
+    const staticData = {
+        general: 5,
+        kitchen: 5,
+        bathroom: 5,
+        garden: 5,
+    }
+    // use a promise.all because the tables are not connected to each other
+    Promise.all([
+        fetchJson(feedbackUrl),
+        fetchJson(houseUrl)
+    ])
+        // hier word de data omgezet naar een object en met render word het weergegeven
+        .then(async (feedback) => {
+            response.render('score', {
+                house: feedback[1].data,
+                feedback: feedback[0].data,
+                // rating: feedbackdetails[73].rating,//de rating klopt bij het huis maar is nu handmatig gedaan maar dit moet dynamisch
+                succed: gelukt,
+                users: usersUrl.data,
+                ratings: staticData,
+            });
+        })
+})
+
+
+
+app.get('/succes', function (request, response) {
+    const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?filter[house][_eq]=${request.params.id}`;
+    // hier moet een
+
+    // use a promise.all because the tables are not connected to each other
+    Promise.all([
+        fetchJson(feedbackUrl),
+    ])
+        // hier word de data omgezet naar een object en met render word het weergegeven
+        .then(async (feedback) => {
+            response.render('succes', {
+                house: feedback.data,
+                feedback: feedback.data,
+                // rating: feedbackdetails[73].rating,//de rating klopt bij het huis maar is nu handmatig gedaan maar dit moet dynamisch
+                succed: gelukt,
+                users: usersUrl.data,
+            });
+        })
+})
+
+
+
+app.post('/score/:id', function (request, response) {
+//this is the empty object that is going to be filled with the new score
+    const newScore = {
+        general: request.body.algemeenNumber,
+        kitchen: request.body.keukenNumber,
+        bathroom: request.body.badkamerNumber,
+        garden: request.body.tuinNumber,
+        new: request.body.new,
+    };
+
+    const noteUser = request.body.note
+
+// make the post route
+    fetch(`https://fdnd-agency.directus.app/items/f_feedback`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json', // Set appropriate header
+        },
+        body: JSON.stringify({
+            "house": request.params.id,
+            "list": 7,
+            "user": 5,
+            rating: newScore,
+            note: noteUser,
+        }),
+    })
+
+
+        // todo als javascript uit staat werkt de interactie niet en moet je de pagina refreshen
+        // todo dit moet je met een redirect oplossen voor als javascript uit staat
+        // hier word de data omgezet naar een object en met render word het weergegeven
+        .then(async (apiResponse) => {
+            // if the enhanced is true do this en the render is the partial
+            if (request.body.enhanced) {
+                const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?filter[house][_eq]=${request.params.id}`;
+                // use a promise.all because the tables are not connected to each other
+                fetchJson(feedbackUrl)
+                    // todo zorgen dat de successtate er is want dynamisch weergeven van data en de enhanced is te moeilijk samen
+                    .then(async (feedback) => {
+                        // console.log(feedback.data)
+                        response.render('partials/succes_partial', {
+                                result: apiResponse,
+                                feedback: feedback.data
+                                // feedback hier toevoegen lukt niet ant het omzetten gebeurt in de get route
+
+                            }
+                        )
+                    })
+
+
+            }
+
+
+
+
+            // dit is voor de notitie omdat ik2x een enhanced gebruik
+            if (request.body.notesEnhanced) {
+                const feedbackUrl = `https://fdnd-agency.directus.app/items/f_feedback/?filter[house][_eq]=${request.params.id}`;
+                fetchJson(feedbackUrl)
+                    .then(async (feedback) => {
+                        console.log('feedback.data["0"].note')
+                        console.log(JSON.stringify(feedback.data.note))
+                        response.render('partials/ShowNotes', {
+                                result: apiResponse,
+                                feedback: feedback.data
+                            }
+                        )
+                    })
+            }
+
+            // todo navragen waarom deze pagina word ingeladen terwijl dat niet moet en alleen als de html werkt gebruik je dit
+            else {
+                console.log('dit word redicted')
+                // response.redirect(303, '/score/' + request.params.id)
+                response.redirect(303, '/succes' )
+            }
+
+            // the else is commented because if it is not working the full page is show in the beoordeling
+
+            // todo  door deze else werkt het wel met aleeen html en niet met css en javascript
+
+        })
+
+
+
+
+})
+
+
+

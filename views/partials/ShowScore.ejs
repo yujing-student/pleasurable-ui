@@ -1,6 +1,20 @@
-<ul class="output_other_users">
 
-
-
+<ul class="showscore">
+    <li>dit is uw eerdere score</li>
+    <% if (feedback.length > 0) { %>
+        <% if (feedback[feedback.length - 1].rating) { %>
+            <li>Algemeen : <%= feedback[feedback.length - 1].rating.general %></li>
+            <li>Keuken : <%= feedback[feedback.length - 1].rating.kitchen %></li>
+            <li>Badkamer: <%= feedback[feedback.length - 1].rating.bathroom %></li>
+            <li>Tuin: <%= feedback[feedback.length - 1].rating.garden %></li>
+        <% } else { %>
+            <p class="">er is geen score ingevoerd</p>
+        <% } %>
+    <% } else { %>
+        <p>er is geen score ingevoerd.</p>
+    <% } %>
 </ul>
 
+
+
+<!--todo uitzoeken hoe je hier de socre kan weergeven-->

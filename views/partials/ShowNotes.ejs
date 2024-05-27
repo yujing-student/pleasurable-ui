@@ -1,4 +1,12 @@
 <ul class="show_notes">
+    <% if (feedback.length > 0) { %>
 
+        <li><%= feedback[feedback.length - 1].note %></li>
 
+    <% } else { %>
+        <li>u hebt nog niks ingevoerd</li>
+
+    <% } %>
 </ul>
+
+
