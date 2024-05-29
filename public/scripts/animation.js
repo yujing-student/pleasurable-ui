@@ -13,4 +13,3 @@ gsap.from(".description", {
     x: -1000,
     duration: 1,
 });
-

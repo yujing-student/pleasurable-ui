@@ -1,3 +1,27 @@
+// Ik heb de form een class mee gegeven waarbij ik alle formulieren selecteer met de class ratingsFavorieten deze zit in een variable genaamd allRatings
+const allRatings = document.querySelectorAll('.ratingsFavorieten')
+// hier schrijf ik een if statement waarbij ik de variable allRatings oproep waarbij de class .ratingsFavoriten in zit en maak ik een forEach loop mee
+// En maak ik een variable waarbij ik alle input radio oproep
+if(allRatings){
+  allRatings.forEach(function(formRating){
+    const radioButtons = formRating.querySelectorAll('input[type=radio]')
+
+    // hier maak ik een een forEach loop waar ik een nieuwe funcite maak met een eventListener waarbij ik zeg activeer als er een verandering komt in de input radio's
+    radioButtons.forEach(function(radioButton){
+      radioButton.addEventListener('change', function(){
+        // const value = radioButton.value
+
+        // nu haal ik formRating op met de functie submit
+        formRating.submit()
+      })
+    })
+
+
+  })
+}
+
+
+
 
 
 // here i define that this is the laoding state
@@ -8,9 +32,10 @@ let succes = document.querySelector('.successtate');
 // user parameters for the forms that the code is dry
 // using this is neccessary because the 2 forms must have the exact same function
 FormsEnhanced('.scorefield', '.showscore','enhanced', '.loading');
+
+
 FormsEnhanced('.notesForm', '.show_notes', 'notesEnhanced', '.loading');
 
-// updateButtonColor()
 // todo uitzoeken waarom de loading state met parameters niet werkt
 
 
@@ -55,7 +80,7 @@ function FormsEnhanced(specificForm, ShowResultsData, enhancedName, loadingState
           })
           .then(function (responseHTML) {
             //haal de laoder weg
-            console.log('terug!')
+            console.log(' de fetch is gelukt en je ebtn terug!')
             loadingElement.classList.remove('loader');
             succes.classList.add('success')
             succes.textContent = '✓';
@@ -98,41 +123,5 @@ function FormsEnhanced(specificForm, ShowResultsData, enhancedName, loadingState
     });
   });
 }
-
-
-function updateButtonColor() {
-  const checkedLabels = allLabels.filter(label => label.querySelector("input").checked);
-  const allChecked = checkedLabels.length === allLabels.length; // Check if all labels are checked
-
-  if (allChecked) {
-    button.style.backgroundColor = "green"; // Change button color to green
-  } else {
-    button.style.backgroundColor = ""; // Reset button color if not all checked
-  }
-}
-
-
-function addSuccessCheckmark(buttonSelector, successElementSelector, delay = 1000) {
-  const button = document.querySelector(buttonSelector);
-  const element = document.querySelector(successElementSelector);
-
-  if (!button || !element) {
-    console.error("Error: Button or success element not found.");
-    return; // Handle potential errors gracefully
-  }
-
-  button.addEventListener("click", function() {
-
-
-    setTimeout(function() {
-      element.classList.add("success");
-      element.textContent = "✓";
-    }, delay);
-  });
-}
-
-// Usage:
-// addSuccessCheckmark(".NotesForm__button", ".successtate");
-
 
 // Assuming your selectors are correct

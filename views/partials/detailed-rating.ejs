@@ -1,44 +1,25 @@
 <input type="hidden" name="id" value="<%- huis.id %>" />
-<input type="radio" id="1star" name="stars" value="1">
-<label for="1star"><svg width="200px" height="100px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-        <!-- Outer path for star outline -->
-        <path fill="none" stroke="var(--ci-primary-color, currentColor)" stroke-width="32" d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Z"/>
-        <!-- Inner path for star fill -->
-        <path fill="var(--ci-secondary-color, currentColor)" d="M461.469,217.37,367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"/>
-    </svg></label>
+<!--         algemeen-->
+<fieldset class="fieldsetRatingCard">
+  <input class="inputRating" id="algemeen1" name="algemeenNumber" type="radio" value="1">
+  <label aria-label="1 " for="algemeen1" class="labelRating"></label>
 
-<input type="radio" id="2star" name="stars" value="2" checked>
-<label for="2star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-        <!-- Outer path for star outline -->
-        <path fill="none" stroke="var(--ci-primary-color, currentColor)" stroke-width="32" d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Z"/>
-        <!-- Inner path for star fill -->
-        <path fill="var(--ci-secondary-color, currentColor)" d="M461.469,217.37,367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"/>
-    </svg></label>
+  <input class="inputRating" id="algemeen2" name="algemeenNumber" type="radio" value="2">
+  <label aria-label="2 sterren" for="algemeen2" class="labelRating"></label>
 
-<input type="radio" id="3star" name="stars" value="3">
-<label for="3star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-        <!-- Outer path for star outline -->
-        <path fill="none" stroke="var(--ci-primary-color, currentColor)" stroke-width="32" d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Z"/>
-        <!-- Inner path for star fill -->
-        <path fill="var(--ci-secondary-color, currentColor)" d="M461.469,217.37,367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"/>
-    </svg></label>
 
-<input type="radio" id="4star" name="stars" value="4">
-<label for="4star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-        <!-- Outer path for star outline -->
-        <path fill="none" stroke="var(--ci-primary-color, currentColor)" stroke-width="32" d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Z"/>
-        <!-- Inner path for star fill -->
-        <path fill="var(--ci-secondary-color, currentColor)" d="M461.469,217.37,367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"/>
-    </svg></label>
+  <input class="inputRating" id="algemeen3" name="algemeenNumber" type="radio" value="3">
+  <label aria-label="3 sterren" for="algemeen3" class="labelRating"></label>
 
-<input type="radio" id="5star" name="stars" value="5">
-<label for="5star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-        <!-- Outer path for star outline -->
-        <path fill="none" stroke="var(--ci-primary-color, currentColor)" stroke-width="32" d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Z"/>
-        <!-- Inner path for star fill -->
-        <path fill="var(--ci-secondary-color, currentColor)" d="M461.469,217.37,367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"/>
-    </svg></label>
 
+  <input class="inputRating" id="algemeen4" name="algemeenNumber" type="radio" value="4">
+  <label aria-label="4 sterren" for="algemeen4" class="labelRating"></label>
+
+
+  <input class="inputRating" id="algeemn5" name="algemeenNumber" type="radio" value="5">
+  <label aria-label="5 sterren" for="algeemn5" class="labelRating"></label>
+
+</fieldset>
+ 
 <input type="submit" value="Rate" />
-
-<a href="/score/<%= huis.id %>">Bekijk hier de overzicht van de score </a>
+ 

@@ -16,10 +16,6 @@ body {
 /*    bottom: 5px;*/
 /*}*/
 
-/*dit stond eerst op display none en nu op zichtbaar*/
-ul {
-    /*display: none;*/
-}
 
 
 
@@ -34,14 +30,8 @@ main {
 
 
 
-    grid-row-gap: 3em;
-    & hr {
-        width: 94%;
+    grid-row-gap: 2em;
 
-        margin-left: 2em;
-        margin-right: 2em;
-        /*  dit is de breedte van de hr lijn*/
-    }
 }
 
 
@@ -64,6 +54,7 @@ input:not(input:checked ~ input)
      display: grid;
     border-top: 2px solid hsl(0 0% 90% / 1);
     padding-top: 2em;
+    row-gap: 0.5em;
     /*justify-content: center;*/
     /*align-items: center;*/
     /*place-items: center;*/
@@ -73,7 +64,7 @@ input:not(input:checked ~ input)
     /*text-align: center;*/
     font-size: 2em;
     font-weight: bold;
-    margin-bottom: 1em;
+    margin-bottom: 0.2em;
 }
 .sectionUsers p{
     /*text-align: center;*/
@@ -108,7 +99,7 @@ dit word hergebruiks users op index en score pagina
     /*place-items: center;*/
     grid-column-gap: 3em;
     /*padding: 2em;*/
-    margin-left: calc(50% - (80% / 2));
+    /*margin-left: calc(50% - (80% / 2));*/
 
 }
 .users{
@@ -133,8 +124,8 @@ dit word hergebruiks users op index en score pagina
 }
 
 .userListScore__image{
-    width: 100%;
-    height: auto;
+    width: 200px;
+    height: 142px;
     grid-row: 1;
     display: grid;
 }
@@ -142,8 +133,16 @@ dit word hergebruiks users op index en score pagina
 
 /*einde herbgerbuiken */
 
+.userIndex__image{
+    width: 100px;
+    height: auto;
+    grid-row: 1;
+    display: grid;
+
+}
+
 /*herbgeruiken streep*/
-.houseInfo,.houseDetailsSection,.sectionUsers{
+.houseInfo,.houseDetailsSection,.usersList{
     border-bottom:  2px solid hsl(0 0% 90% / 1);
     padding-bottom: 2em;
 }
@@ -173,7 +172,7 @@ hergebruiken op de pagina zelf
 .link{
     color: var(--lochmara-primary-color);
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
 
 }
@@ -187,6 +186,13 @@ hergebruiken op de pagina zelf
 
     /*place-items: center;*/
 }
+
+.formRatingItem__ratings{
+    padding: 2em;
+
+    /*grid-row-end: 2;*/
+    /*grid-column-end: 1;*/
+}
 /*
 einde hergebruiken op de pagina zelf
 */
@@ -195,6 +201,9 @@ einde hergebruiken op de pagina zelf
 .houseInfo{
 
     padding-top: 1em;
+    display: grid;
+    row-gap: 0.5em;
+    /*font-size: 1.1em;*/
 
     /*background-color: red;*/
 }
@@ -211,7 +220,7 @@ einde hergebruiken op de pagina zelf
     /*justify-items: center;*/
     /*padding: 1em 2em 1em 2em;*/
     row-gap: 2em;
-    font-size: 1.1em;
+    font-size: 1.2em;
 
     line-height: 1.5em;
     max-width: 24em;
@@ -240,6 +249,7 @@ einde hergebruiken op de pagina zelf
     grid-template-columns: 1fr;
     column-gap: 1em;
     row-gap: 1em;
+
 }
 
 
@@ -253,7 +263,7 @@ einde hergebruiken op de pagina zelf
     /*grid-template-columns: auto auto auto;*/
     max-width: 100%;
     grid-column-gap: 2em;
-    grid-row-gap: 2em;
+    grid-row-gap: 2em;  padding-bottom: 2em;
     /*max-width: 16em;*/
 
     /*padding: 2em;*/
@@ -263,6 +273,7 @@ einde hergebruiken op de pagina zelf
 .formRatingItem__header{
     /*place-items: center;*/
     display: grid;
+    row-gap: 0.5em;
     /*text-align: center;*/
     /*row-gap: 1em;*/
 }
@@ -274,12 +285,16 @@ einde hergebruiken op de pagina zelf
     /*place-items: center;*/
     font-size: 2em;
     font-weight: bold;
+    margin-bottom: 0.2em;
 }
 
 .formRatingItem__Note{
     padding: 2em;
 }
 
+#note{
+    line-height: 1.5em;
+}
 
 
 
@@ -296,12 +311,19 @@ einde hergebruiken op de pagina zelf
     text-weight: bold;
     border-color: var(--color-main-text);
     display: flex;
+    width: max-content;
+    /*background-color: deepskyblue;*/
+}.fieldsetRating__second {
+    text-weight: bold;
+    border-color: var(--color-main-text);
+    display: flex;
+    width: max-content;
     /*background-color: deepskyblue;*/
 }
 
 
 .titleRating{
-    /*text-align: center;*/
+    text-align: center;
     font-weight: bold;
 }
 .labelRating:hover{
@@ -313,12 +335,37 @@ einde hergebruiken op de pagina zelf
     content: "★";
     font-size: 2em;
     display: grid;
-    /*place-items: center;*/
+    place-items: center;
 }
 
 .labelRating{
     color: #a4a2a2;
     /*background-color: #0071B3;*/
+}
+
+.labelRating__gray{
+
+    color: #a4a2a2;
+}
+
+.labelRating__gray:after{
+    width: 1.5em;
+    content: "★";
+    font-size: 2em;
+    display: grid;
+    place-items: center;
+}
+
+.labelRating__second:after{
+    width: 1.5em;
+    content: "★";
+    font-size: 2em;
+    display: grid;
+    place-items: center;
+}
+
+.labelRating__second{
+    color:var(--web-orange-primary-color);
 }
 .fieldsetRating:checked{
     border-color: #0071B3;
@@ -388,7 +435,7 @@ einde hergebruiken op de pagina zelf
 }
 #note{
     min-width: 18em;
-    height: 8em;
+    height: 11em;
     max-width: 800px;
     overflow: hidden;
     resize: vertical;
@@ -398,6 +445,7 @@ einde hergebruiken op de pagina zelf
 .show_notes{
     /*display: grid;*/
     /*place-items: center;*/
+
 }
 .formRatingItem__NoteShow h2{
     padding-top: 0.3em;
@@ -420,6 +468,18 @@ einde hergebruiken op de pagina zelf
 
     /*padding: 2em 2em 2em;*/
 }
+
+.usersListScore__second{
+    display: grid;
+    grid-template-columns:repeat( auto-fit, minmax(300px, 14em) ) ;
+    /*background-color: #31cfec;*/
+    /*justify-items: center;  !* Center items horizontally *!*/
+    /*align-items: center;*/
+    /*place-items: center;*/
+    grid-column-gap: 3em;
+    gap: 43px;
+    padding-top: 1em;
+}
 .usersListscore__li{
     display: grid;
     justify-content: flex-start;
@@ -436,6 +496,22 @@ einde hergebruiken op de pagina zelf
     /*place-content: center;*/
     grid-template-columns: 1fr;
     grid-template-rows: 6em;
+    /*repeat( auto-fit, minmax(150px, 1fr) )*/
+
+}
+
+
+.usersListscore__li__second{
+    display: grid;
+    justify-content: flex-start;
+    background-color: var(--regent-blue-primary-color);
+    padding: 2em;
+    /*margin: 1em;*/
+    column-gap: 2em;
+    row-gap: 1em;
+    width: max-content;
+
+
     /*repeat( auto-fit, minmax(150px, 1fr) )*/
 
 }
@@ -536,6 +612,7 @@ einde hergebruiken op de pagina zelf
         grid-row-start: 2;
         grid-column: 1;
         padding: 2em;
+
         /*grid-row-end: 2;*/
         /*grid-column-end: 1;*/
     }
@@ -602,11 +679,11 @@ einde hergebruiken op de pagina zelf
 
 .NotesForm__button {
     cursor: pointer;
+    transition: .1s;
 }
 
 .NotesForm__button:active {
-    transform: translateY(-10px); /* Verplaats de knop 5 pixels naar beneden */
-    animation: spring 0.2s ease-in-out 10; /* Start de animatie */
+    transform: translateY(.1em); /* Verplaats de knop 5 pixels naar beneden */
     cursor: pointer;
 }
 
@@ -618,11 +695,6 @@ einde hergebruiken op de pagina zelf
 /*    50% { transform: translateY(-35px); } !* Spring omhoog *!*/
 /*    100% { transform: translateY(0); } !* Terug naar beginpositie *!*/
 /*}*/
-
-
-.NotesForm__button:hover {
-    text-decoration: underline;
-}
 
 
 .animationLink a {
@@ -659,3 +731,43 @@ einde hergebruiken op de pagina zelf
     scale: 1 1;
     transform-origin: left center;
 }
+
+
+/*git status
+
+checkt de status van de git*/
+
+
+/*git add .
+
+ voegt alle bestanden toe*/
+
+
+/*git commit -m "message"
+
+
+ message is de commit message*/
+
+/*git push origin main
+
+
+of git push origin master als je op de main branch zit*/
+/**/
+/* git remote branche
+
+dit laat alle branches zien*/
+
+/*
+git remote -v
+
+ dit laat alle remote repos zien
+ */
+
+/*git branch -a
+
+dit laat alle branches zien*/
+
+
+/* git checkout my-branch-name
+
+dit switcht naar de branch*/
