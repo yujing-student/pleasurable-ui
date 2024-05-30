@@ -21,8 +21,10 @@ Favortieten huizen lijst funda
 <img width="873" alt="image" src="https://github.com/yujing-student/pleasurable-ui/assets/100352887/fd9bf5eb-05a4-4fbf-bca8-5723c656cd57">
 <img width="790" alt="image" src="https://github.com/yujing-student/pleasurable-ui/assets/100352887/13394b96-1214-4f5d-80f4-cf0f2e7b53f2">
 
+In dit project is onze opdrachtgever funda en die wil een website hebben waarin de gebruikers hun favoerieten huizen kunnen zien die ze heben opgeslagen en die wileln ze samen met andere delen ook willen ze samen bepalen of ze een huis gaan kopen
+door gebruik te maken van een beoordelingssyteem op een aparte pagina de score pagina en daar wil je jouw eigen score zien en de score van de andere gebruikers
 
-In dit project werk ik samen met lesley en daarin is afgesproken dat hij de index doet met daar de gerbuikers en de favorieten huizen van de gebruikers
+In dit project werk ik ook samen met lesley en daarin is afgesproken dat hij de index doet met daar de gerbuikers en de favorieten huizen van de gebruikers en ik doe de score pagina waar je als gebruiker een beoordeling kan achterlaten
 
 
 
