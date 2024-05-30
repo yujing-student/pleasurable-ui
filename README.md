@@ -2,7 +2,7 @@
 
 # Titel
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
-
+Favortieten huizen lijst funda
 ## Inhoudsopgave
 
   * [Beschrijving](#beschrijving)
@@ -17,14 +17,67 @@
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
 
+<img width="873" alt="image" src="https://github.com/yujing-student/pleasurable-ui/assets/100352887/fd9bf5eb-05a4-4fbf-bca8-5723c656cd57">
+
+In dit project werk ik samen met lesley en daarin is afgesproken dat hij de index doet met daar de gerbuikers en de favorieten huizen van de gerbuikers
+
+
+
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+Als gebruiker wil ik mijn favorieten huizen kunnen zien in de lijst en kunnen zien met wie ik de lijst deel ook wil ik als ik op een huis druk ratings toevoegen
+### installatie
+Je drukt op de groen knop downloaden als zip daarna kan je de zip map uitpakken
+verder heb je een code editor zoals visual studio code nodig ook moet je node js geinstalleerd hebben en dan kan je in de 
+code editor het project openen en
+vervolgens voer je in je terminal
 
+
+```
+npm install
+```
+en daarna 
+```
+npm start
+```
+om het programma op te starten en dan zie je verolgens localhost:8000 in de terminal 
+staan
+
+[![img_1 .png](img_1.png)](https://raw.githubusercontent.com/yujing-student/the-web-is-for-everyone-interactive-functionality/main/img_1.png)
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+<ul>
+<li>Express</li>
+<li>EJS</li>
+<li>Node js</li>
+<li>css voor de styling</li>
+<li>progressive enhancement</li>
 
-## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+</ul>
+<p>
+Progressive enhancement is dat je 
+vanuit lagen gaat bouwen dus de 1ste laag is de functionaliteit<br>
+de 2de laag is de styling dus de css<br>
+de 3de laag is client side javascript met daarin de extra's zodat de pagina mooier word
+
+<br>
+Het doel is dat je pagina op oude browsers 
+en oude apperaten ook werkt en redelijk funcitoneel is<br>
+
+Dit heb ik toegepast door eerst de data uit de server op te halen zodat de gebruiker de tekst kan zien
+de 2de laag is de styling zodat er een mooie layout staat en
+de 3de laag is clientside extra javascript voor functionaliteiten of voor styling dus in mijn geval een hamburgermenu
+
+
+
+</p>
+
+
+## Bronnen
+
+## Licentie
+
+This project is licensed under the terms of the [MIT license](./LICENSE).
 
 ## Bronnen
 
